@@ -29,6 +29,7 @@ $(function() {
 
 			$(this).addClass('selected');
 			var id = $(this)[0].id;
+
 			$('section#'+id).addClass('selected');
 
 		} else {
@@ -43,7 +44,21 @@ $(function() {
 
 			$(this).removeClass('selected');
 		}
+
+		$('.image').hover(function() {
+			var image = $(this).children('img').attr('src');
+			$('#imageViewer').css({'backgroundImage':'url("'+image+'")'});
+			$('#imageViewer').addClass('hover');
+		}, function() {
+			$('#imageViewer').not('.clicked').css({'backgroundImage':''});
+			$('#imageViewer').removeClass('hover');
+		});
 		
+		$('.image').click(function() {
+			var image = $(this).children('img').attr('src');
+			$('#imageViewer').css({'backgroundImage':'url("'+image+'")'});
+			$('#imageViewer').removeClass('hover').addClass('clicked');
+		});
 	});
 
 	$(window).resize(function() {
@@ -76,8 +91,24 @@ $(function() {
 
 	<section class="people" id="faculty">
 		<div class="inner">
-		<p>Our faculty members are practicing professional artists with significant exhibition records and prestigious awards. Many are represented by galleries in New York, and many have written and published books. Their work can be found in private, corporate, and museum collections, including the Guggenheim Museum, Metropolitan Museum of Art, Museum of Modern Art, Smithsonian Institution, Victoria and Albert Museum, and Whitney Museum of American Art.</p>
+			<p>Our faculty members are practicing professional artists with significant exhibition records and prestigious awards. Many are represented by galleries in New York, and many have written and published books. Their work can be found in private, corporate, and museum collections, including the Guggenheim Museum, Metropolitan Museum of Art, Museum of Modern Art, Smithsonian Institution, Victoria and Albert Museum, and Whitney Museum of American Art.</p>
+			<div class="images">
+				<div class="image">
+					<img src="mark.jpg"/>
+				</div>
+				<div class="image">
+					<img src="mark.jpg"/>
+				</div>
+				<div class="image">
+					<img src="mark.jpg"/>
+				</div>
+				<div class="image">
+					<img src="mark.jpg"/>
+				</div>
+			</div>
 		</div>
 	</section>
+
+	<div id="imageViewer"></div>
 </body>
 </html>

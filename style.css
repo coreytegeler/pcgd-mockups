@@ -42,7 +42,7 @@
 		width: 100%;
 	}
 	.zoom #front {
-		color: rgba(0,0,0,.03);
+		color: rgba(0,0,0,.08);
 		-webkit-touch-callout: none;
 	    -webkit-user-select: none;
 	    cursor: default;
@@ -58,6 +58,8 @@
 	.inner p {
 		text-align: justify;
 	    text-justify: inter-word;
+	}
+	#manifesto .inner p {
 	    display: table-cell;
 		vertical-align: middle;
 	}
@@ -69,7 +71,9 @@
 	.link {
 		cursor: pointer;
 		text-decoration: underline;
-
+	}
+	.zoom .link:not(.selected) {
+		opacity: 0.08
 	}
 	.link.tag {
 		color: green;
@@ -80,20 +84,53 @@
 	.link#faculty {
 		color: red;
 	}
-	.people#faculty {
+	.people {
 		position: fixed;
 		width: 100%;
-		height: 100%;
+		height: calc(100% - 170px);
 		-webkit-transform: translateY(100%);
 		-webkit-transition: all 300ms ease 100ms;
 		font-size: 45px;
 		line-height: 50px;
 		opacity: 0;
-		z-index: -1;
 	}
-	.people#faculty.selected {
-		-webkit-transform: translateY(0);
+	.people.selected {
+		-webkit-transform: translateY(170px);
 		opacity: 1;
-		z-index: 1;
-
+		z-index: 2;
+	}
+	#imageViewer {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: .3;
+		z-index: 0;
+		background-repeat: no-repeat;
+		background-position: center;
+		display: none;
+		background-color: rgba(255,255,255,0.9);
+	}
+	#imageViewer.hover {
+		display: block;
+		background-size: cover;
+	}
+	#imageViewer.clicked {
+		display: block;
+		background-size: auto 80%;
+		opacity: 1;
+		z-index: 5;
+	}
+	.people .images {
+		width: 100%;
+		display: block;
+	}
+	.people .images .image {
+		width: 200px;
+		display: block;
+		float: left;
+	}
+	.people .images .image img {
+		width: 100%;
 	}
