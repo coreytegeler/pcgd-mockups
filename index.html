@@ -1,166 +1,61 @@
 <html>
 <head>
-<style>
-	body {
-		margin: 0;
-		height: 100%;
-		width: 100%;
-		font-family: 'Arial', sans-serif;
-		
-	}
-	header {
-		position: fixed;
-		width: 100%;
-		text-align: center;
-		font-size: 100px;
-		height: 100px;
-		top:50%;
-		margin-top: -250px;
-		color: red;
-		font-weight: 900;
-		display: none;
-	}
-	div {
-		display: inline;
-	}
-	main {
-		position: fixed;
-		height: 100%;
-		width: 100%;
-		font-size: 50px;
-		line-height: 60px;
-		-webkit-transition: all 200ms ease-in-out;
-	}
-	main.blur {
-		-webkit-filter: blur(3px);
-		-webkit-transform: scale(5);
-	}
-	main .inner {
-		height: 100%;
-		width: 80%;
-		max-width: 1200px;
-		min-width: 600px;
-		display: table;
-		margin: auto;
-	}
-	main .inner p {
-		text-align: justify;
-	    text-justify: inter-word;
-	    display: table-cell;
-		vertical-align: middle;
-	}
-	section {
-		position: fixed;
-		height: 100%;
-		width: 100%;
-		/*-webkit-transition: top 200ms ease-in-out, left 200ms ease-in-out, bottom 200ms ease-in-out, right 200ms ease-in-out;*/
-	}
-	section.selected {
-		background: rgba(255,255,255,.9);
-	}
-	section#one {
-		top: calc(-100% + 100px);
-		left: calc(-100% + 100px);
-	}
-	section#one.selected  {
-		top:0 !important;
-		left:0 !important;
-	}
-	section#two {
-		top: calc(-100% + 100px);
-		right: calc(-100% + 100px);
-	}
-	section#two.selected  {
-		top:0 !important;
-		right:0 !important;
-	}
-	section#three {
-		top: calc(100% - 100px);
-		right: calc(-100% + 100px);
-	}
-	section#three.selected  {
-		top:0 !important;
-		right:0 !important;
-	}
-	section#four {
-		bottom: calc(-100% + 100px);
-		left: calc(-100% + 100px);
-	}
-	section#four.selected  {
-		bottom:0 !important;
-		left:0 !important;
-	}
-	section .button {
-		position: absolute;
-		width: 100px;
-		height: 100px;
-		text-align: center;
-		font-size: 100px;
-	}
-	section .close {
-	
-	}
-
-	.button {
-		cursor: pointer;
-	}
-	.selected .button.open {
-		display: none;
-	}
-	#one .button.open {
-		bottom: 0;
-		right: 0;
-	}
-	#one .button.close {
-		top: 0;
-		left: 0;
-	}
-	#two .button.open {
-		bottom: 0;
-		left: 0;
-	}
-	#two .button.close {
-		top: 0;
-		right: 0;
-	}
-	#three .button.open {
-		top: 0;
-		left: 0;
-	}
-	#three .button.close {
-		bottom: 0;
-		right: 0;
-	}
-	#four .button.open {
-		top: 0;
-		right: 0;
-	}
-	#four .button.close {
-		bottom: 0;
-		left: 0;
-	}
-
-	.tag, .tag:visited, .tag:hover {
-		color: red;
-		text-decoration: none;
-	}
-
-	
-</style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<link href="style.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.transit.min.js"></script>
 <script type="text/javascript">
 $(function() {
-	$('.open').click(function() {
-		$('.selected').removeClass('selected');
-		var which = $(this).parent()[0].id;
-		$('section#' + which).addClass('selected');
-		$('main').toggleClass('blur')
+	$('.link').click(function() {
+		if(!$(this).hasClass('selected')) {
+			var scale = 3;
+			var linkW = $(this).width();
+			var linkH = $(this).height();
+			var linkX = $(this).offset().left + linkW/2;
+			var linkY = $(this).offset().top;
+
+			var newX = winW()/2 - linkX;
+			var newY = -linkY;
+
+			$('#manifesto').transition({
+				x: newX,
+				y: newY
+			}, 500);
+
+			$('#front').transition({
+				scale: scale
+			}, 500);
+
+			$('body').addClass('zoom');
+
+			$(this).addClass('selected');
+			var id = $(this)[0].id;
+			$('section#'+id).addClass('selected');
+
+		} else {
+			$('#manifesto').css({
+				x: 0,
+				y: 0
+			});
+
+			$('#front').transition({
+				scale: 1
+			}, 500);
+
+			$(this).removeClass('selected');
+		}
+		
 	});
 
-	$('.close').click(function() {
-		$('.selected').removeClass('selected');
-		$('main').toggleClass('blur')
+	$(window).resize(function() {
+
 	});
+
+	function winW() {
+		return window.innerWidth
+	}
+	function winH() {
+		return window.innerHeight
+	}
 });
 	
 </script>
@@ -170,29 +65,19 @@ $(function() {
 	<header>
 		PURCHASE<br>COLLEGE<br>GRAPHIC<br>DESIGN
 	</header>
-	<main>
-		<div class="inner">
-		<p>The graphic design area offers a distinctive program in the art and practice of print and digitally based graphic design and experimental publishing. <div class="student">Student</div> approaches graphic design as a vital field of professional art practice that gives shape to culture through a variety of media. The <div class="faculty offer a distinctive program in the art and practice of print and digitally based graphic design and experimental publishing. The program approaches graphic design as a vital field of professional art practice that gives shape to culture through a variety of media: <div class="tag">books</div>, <div class="tag">magazines</div>, <div class="tag">motion graphics</div>, <div class="tag">web design</div>, <div class="tag">type design</div>, <div class="tag">exhibition design</div>, <div class="tag">packaging</div>.</p>
+	<div id="front">
+		<div id="manifesto">
+			<div class="inner">
+			<p>Our <span id="students" class="link">students</span> approach graphic design as a vital field of professional art practice that gives shape to culture through media. The <span id="faculty" class="link">faculty</span> offer a distinctive program in the art and practice of print and digitally based graphic design and experimental publishing. The program approaches graphic design as a vital field of professional art practice that gives shape to culture through a variety of media: <span class="link tag">books</span>, <span class="link tag">magazines</span>, <span class="link tag">motion graphics</span>, <span class="link tag">web design</span>, <span class="link tag">type design</span>, <span class="link tag">exhibition design</span>, <span class="link tag">packaging</span>.</p>
+			</div>
 		</div>
-	</main>
-	<section id="one">
-		<div class="open button">1</div>
-		<div class="close button">X</div>
-	</section>
+	</div>
 
-	<section id="two">
-		<div class="open button">2</div>
-		<div class="close button">X</div>
-	</section>
 
-	<section id="three">
-		<div class="open button">3</div>
-		<div class="close button">X</div>
-	</section>
-
-	<section id="four">
-		<div class="open button" >4</div>
-		<div class="close button">X</div>
+	<section class="people" id="faculty">
+		<div class="inner">
+		<p>Our faculty members are practicing professional artists with significant exhibition records and prestigious awards. Many are represented by galleries in New York, and many have written and published books. Their work can be found in private, corporate, and museum collections, including the Guggenheim Museum, Metropolitan Museum of Art, Museum of Modern Art, Smithsonian Institution, Victoria and Albert Museum, and Whitney Museum of American Art.</p>
+		</div>
 	</section>
 </body>
 </html>
