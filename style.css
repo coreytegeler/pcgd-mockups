@@ -1,197 +1,224 @@
 @import url(http://fonts.googleapis.com/css?family=Yeseva+One|PT+Mono|Trocchi|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800|Maven+Pro:400,700,500,900);
-	body {
-		margin: 0;
-		height: 100%;
-		width: 100%;
-		font-family: 'Helvetica', sans-serif;
-		background: #ffcced;
-	}
-	header {
-		position: fixed;
-		width: 100%;
-		text-align: center;
-		font-size: 100px;
-		height: 100px;
-		top:50%;
-		margin-top: -250px;
-		color: red;
-		font-weight: 900;
-		display: none;
-	}
-	div {
-		display: inline;
-	}
 
-	.word[data-font='yeseva-one'] {
-		font-family: 'Yeseva One', serif;	
-	}
-	.word[data-font='pt-mono'] {
-		font-family: 'PT Mono', monospace;
-	}
-	.word[data-font='trocchi'] {
-		font-family: 'Trocchi', serif;
-	}
-	.word[data-font='open-sans'] {
-		font-family: 'Open Sans', sans-serif;
-	}
-	.word[data-font='maven-pro'] {
-		font-family: 'Maven Pro', serif;
-	}
-	.word[data-font='helvetica'] {
-		font-family: 'Helvetica', sans-serif;	
-	}
-	#front {
-		position: fixed;
-		top:0;
-		left: 0;
-		height: 100%;
-		width: 100%;
-		font-size: 35px;
-		line-height: 50px;
-		color: rgba(0,0,0,1);
-		-webkit-transition: color 500ms ease;
-		transition: color 500ms ease;
-		-webkit-transform-origin: 50% top;
-		transform-origin: 50% top;
-	}
-	#front #manifesto {
-		position: absolute;
-		top:0;
-		left: 0;
-		height: 100%;
-		width: 100%;
-	}
-	.zoom #front {
-		color: rgba(0,0,0,.08);
-		-webkit-touch-callout: none;
-	    -webkit-user-select: none;
-	    cursor: default;
-	}
-	.inner {
-		height: 100%;
-		width: 80%;
-		max-width: 1200px;
-		min-width: 600px;
-		display: table;
-		margin: auto;
-	}
-	.inner .text {
-		text-align: justify;
-	    text-justify: inter-word;
-	    -webkit-touch-callout: none;
-	    -webkit-user-select: none;
-	    -khtml-user-select: none;
-	    -moz-user-select: none;
-	    -ms-user-select: none;
-	    user-select: none;
-	}
-	#manifesto .inner .text {
-	    display: table-cell;
-		vertical-align: middle;
-	}
-	.word {
-		-webkit-transition: all 300ms ease 100ms;
-		-moz-transition: all 300ms ease 100ms;
-		transition: all 300ms ease 100ms;
-	}
-	.word:hover {
-		cursor: pointer;
-		/*text-shadow: 0 0 20px rgba(254,234,94,1);*/
-		text-shadow: 0px 1px 5px rgba(0,0,0,.2);
-	}
-	.link {
-		cursor: pointer;
-		text-decoration: underline;
-	}
-	.link.tag {
-		color: green;
-	}
-	.link#students {
-		color: blue;
-	}
-	.link#faculty {
-		color: blue;
-	}
-	.link#alumni {
-		color: blue;
-	}
+@font-face {
+	font-family: 'Neutra';
+	src: url('fonts/NeutraText-Demi.eot') /* EOT file for IE */
+}
+@font-face {
+	font-family: 'Neutra';
+	src: url('fonts/NeutraText-Demi.ttf');
+}
 
-	.tool {
-		position: fixed;
-		width: 75px;
-		height: 200px;
-		right: 50px;
-		top: 50%;
-		margin-top: -100px;
-		background: rgba(255,255,0,.3);
-		box-shadow: 0px 3px 10px rgba(0,0,0,.1);
-		border-radius: 6px;
-	}
-	.tool.dragging, .tool:hover {
-		background: rgba(254,234,94,1);
-		cursor: move;
-	}
+body {
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	font-family: 'Neutra', 'Helvetica', sans-serif;
+	/*background: #ffcced;*/
+	/*background: rgba(0,255,0,1);*/
+	min-width: 480px;
+}
+header {
+	position: fixed;
+	width: 100%;
+	text-align: center;
+	font-size: 100px;
+	height: 100px;
+	top:50%;
+	margin-top: -250px;
+	color: red;
+	font-weight: 900;
+	display: none;
+}
+div {
+	display: inline;
+}
 
-	section {
-		position: fixed;
-		height: 100%;
-		width: 100%;
-	}
-	.zoom .link:not(.selected) {
-		opacity: 0.08
-	}
-	.people {
-		position: fixed;
-		width: 100%;
-		height: calc(100% - 144px);
-		-webkit-transform: translateY(-webkit-calc(100% + 144px));
-		-moz-transform: translateY(-moz-calc(100% + 144px)));
-		transform: translateY(calc(100% + 144px));
-		-webkit-transition: all 300ms ease 100ms;
-		-moz-transition: all 300ms ease 100ms;
-		transition: all 300ms ease 100ms;
-		font-size: 45px;
-		line-height: 50px;
-		opacity: 0;
-		overflow-y: auto; 
-	}
-	.people.selected {
-		-webkit-transform: translateY(144px);
-		opacity: 1;
-		z-index: 2;
-	}
-	#imageViewer {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		opacity: .3;
-		z-index: 0;
-		background-repeat: no-repeat;
-		background-position: center;
-		display: none;
-		background-color: rgba(255,255,255,0.9);
-	}
-	#imageViewer.hover {
-		display: block;
-		background-size: cover;
-	}
-	#imageViewer.clicked {
-		display: block;
-		background-size: auto 80%;
-		opacity: 1;
-		z-index: 5;
-	}
-	.people .images {
-		width: 100%;
-		display: block;
-	}
-	.people .images .image {
-		width: 200px;
-		display: block;
-		float: left;
-	}
-	.people .images .image img {
-		width: 100%;
-	}
+.word[data-font='yeseva-one'] {
+	font-family: 'Yeseva One', serif;	
+}
+.word[data-font='pt-mono'] {
+	font-family: 'PT Mono', monospace;
+}
+.word[data-font='trocchi'] {
+	font-family: 'Trocchi', serif;
+}
+.word[data-font='open-sans'] {
+	font-family: 'Open Sans', sans-serif;
+}
+.word[data-font='maven-pro'] {
+	font-family: 'Maven Pro', serif;
+}
+.word[data-font='helvetica'] {
+	font-family: 'Helvetica', sans-serif;	
+}
+#front {
+	position: fixed;
+	top:0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	font-size: 35px;
+	line-height: 50px;
+	color: rgba(0,0,0,1);
+	-webkit-transition: color 500ms ease;
+	transition: color 500ms ease;
+	-webkit-transform-origin: 50% top;
+	transform-origin: 50% top;
+}
+#front #manifesto {
+	position: absolute;
+	top:0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+.zoom #front {
+	color: rgba(0,0,0,.08);
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    cursor: default;
+}
+.inner {
+	height: 100%;
+	width: 80%;
+	max-width: 1200px;
+	min-width: 600px;
+	display: table;
+	margin: auto;
+}
+.inner .text {
+	text-align: justify;
+    text-justify: inter-word;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#manifesto .inner .text {
+    display: table-cell;
+	vertical-align: middle;
+}
+.word {
+	-webkit-transition: all 100ms ease;
+	-moz-transition: all 100ms ease;
+	transition: all 100ms ease;
+	/*padding: 1px 2px;*/
+}
+.word:hover {
+	cursor: pointer;
+	/*text-shadow: 0 0 20px rgba(254,234,94,1);*/
+	text-shadow: 0px 1px 5px rgba(0,0,0,.2);
+}
+.word.selected {
+	/*border: 1px dotted black;*/
+	background: rgba(255,255,0,.5)
+}
+.link {
+	cursor: pointer;
+	text-decoration: underline;
+	color: blue;
+}
+.link.tag {
+	color: green;
+}
+
+.tool {
+	position: fixed;
+	width: 75px;
+	height: 200px;
+	right: 50px;
+	top: 50%;
+	margin-top: -100px;
+	background: rgba(255,255,0,.3);
+	box-shadow: 0px 3px 10px rgba(0,0,0,.1);
+	border-radius: 6px;
+}
+.tool.dragging, .tool:hover {
+	background: rgba(254,234,94,1);
+	cursor: move;
+}
+
+section {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	text-align: justify;
+    text-justify: inter-word;
+}
+.zoom .link:not(.selected) {
+	opacity: 0.08
+}
+.people {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	-webkit-transform: translateY(100%);
+	-moz-transform: translateY(100%);
+	transform: translateY(100%);
+/*	-webkit-transition: -webkit-transform step-end 200ms;
+	-moz-transition: -moz-transform step-end 200ms;
+	transition: transform step-end 200ms;*/
+	font-size: 45px;
+	line-height: 50px;
+	overflow-y: auto;
+}
+.people.selected {
+	-webkit-transform: translateY(0);
+	-moz-transform: translateY(0);
+	transform: translateY(0);
+	/*opacity: 1;
+	z-index: 2;*/
+}
+#imageViewer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: .3;
+	z-index: 0;
+	background-repeat: no-repeat;
+	background-position: center;
+	display: none;
+	background-color: rgba(255,255,255,0.9);
+}
+#imageViewer.hover {
+	display: block;
+	background-size: cover;
+}
+#imageViewer.clicked {
+	display: block;
+	background-size: auto 80%;
+	opacity: 1;
+	z-index: 5;
+}
+.people .text {
+	font-size: 20px;
+	line-height: 25px;
+	width: 400px !important;
+
+}
+.people .images {
+	/*width: 100%;*/
+	display: table;
+	margin: auto;
+}
+.people .images .block {
+	width: 200px;
+	margin-bottom: 20px; 
+	display: block;
+	float: left;
+	opacity: 0;
+}
+.people .images .block.show {
+	opacity: 1;
+}
+.people .images .block.feature {
+	width: 400px;
+}
+.people .images .image img {
+	width: 100%;
+}

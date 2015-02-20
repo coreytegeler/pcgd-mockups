@@ -9,7 +9,7 @@ $(function() {
 			var linkY = $(this).offset().top;
 
 			var newX = winW()/2 - linkX;
-			var newY = -linkY;
+			var newY = -linkY + 10;
 
 			$('#manifesto').transition({
 				x: newX,
@@ -24,8 +24,8 @@ $(function() {
 
 			$(this).addClass('selected');
 			var id = $(this)[0].id;
-
-			$('section#'+id).addClass('selected');
+			var padTop = ($(this).height() * scale) + 40;
+			$('section#'+id).css({paddingTop: padTop}).addClass('selected');
 
 		} else {
 			$('#manifesto').transition({
@@ -42,21 +42,6 @@ $(function() {
 			$(this).removeClass('selected');
 			$('section.selected').removeClass('selected');
 		}
-
-		$('.image').hover(function() {
-			var image = $(this).children('img').attr('src');
-			$('#imageViewer').css({'backgroundImage':'url("'+image+'")'});
-			$('#imageViewer').addClass('hover');
-		}, function() {
-			$('#imageViewer').not('.clicked').css({'backgroundImage':''});
-			$('#imageViewer').removeClass('hover');
-		});
-		
-		$('.image').click(function() {
-			var image = $(this).children('img').attr('src');
-			$('#imageViewer').css({'backgroundImage':'url("'+image+'")'});
-			$('#imageViewer').removeClass('hover').addClass('clicked');
-		});
 	});
 
 	$(window).resize(function() {
@@ -71,15 +56,17 @@ $(function() {
 		var links = [
 			'students',
 			'faculty',
-			'alumni'
+			'alumni',
+			'apply',
+			'community'
 		];
 
 		$.each(words, function(i,word) {
 			var link = links.indexOf(word);
 			if(link != -1) {
-				manifesto.append($("<span class='word link' id='" + word + "'>"+word+"</span>")).append('\u00A0');
+				manifesto.append($("<span class='link' id='" + word + "'>"+word+"</span>")).append('\u00A0');
 			} else {
-				manifesto.append($("<span class='word'>").text(word+" "));
+				manifesto.append($("<span class='word'>"+word+"</span>")).append('<span> </span>');
 			}
 
 			if(i == words.length - 1) {
@@ -96,14 +83,25 @@ $(function() {
 			"open-sans"
 		];
 		var t = 0;
-		$('.word').click(function() {
-			$(this).attr('data-font', typefaces[t]);
-			console.log(t, typefaces.length);
-			if(t == typefaces.length) {
-				t=0;	
+		$('.word').click(function(e) {
+			if(!$(this).is('.selected')) {
+				if(e.shiftKey) {
+					$(this).addClass('selected');
+				} else {
+					$('.word.selected').removeClass('selected');
+					$(this).addClass('selected');	
+				}
 			} else {
-				t++;
-			}
+				$(this).removeClass('selected');
+			} 
+			
+			// $(this).attr('data-font', typefaces[t]);
+			// console.log(t, typefaces.length);
+			// if(t == typefaces.length) {
+			// 	t=0;	
+			// } else {
+			// 	t++;
+			// }
 			
 		});
 	}
@@ -117,6 +115,43 @@ $(function() {
 			$(this).removeClass('dragging');
 		}
 	});
+
+
+	$('.images').imagesLoaded(function() {
+		$('.images').masonry({
+			itemSelector: '.block',
+			columnWidth: '.image:last-child',
+			gutter: 20,
+			isFitWidth: true
+		});
+
+		$('.link#students').click(function() {
+			$.each($('.images .block'), function(i, block) {
+				setTimeout(function() {
+					$('.images .block:eq('+i+')').addClass('show');	
+				}, 50*i);
+			});
+		});
+	});
+	
+
+	$('.image').hover(function() {
+		// var image = $(this).children('img').attr('src');
+		// $('#imageViewer').css({'backgroundImage':'url("'+image+'")'});
+		// $('#imageViewer').addClass('hover');
+	}, function() {
+		$('#imageViewer').not('.clicked').css({'backgroundImage':''});
+		$('#imageViewer').removeClass('hover');
+	});
+	
+	$('.image').click(function() {
+		var image = $(this).children('img').attr('src');
+		$('#imageViewer').css({'backgroundImage':'url("'+image+'")'});
+		$('#imageViewer').removeClass('hover').addClass('clicked');
+	});
+
+
+
 
 	function winW() {
 		return window.innerWidth
