@@ -3,77 +3,8 @@
 <link href="style.css" type="text/css" rel="stylesheet"/>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script type="text/javascript" src="jquery.transit.min.js"></script>
-<script type="text/javascript">
-$(function() {
-	$('.link').click(function() {
-		if(!$(this).hasClass('selected')) {
-			var scale = 3;
-			var linkW = $(this).width();
-			var linkH = $(this).height();
-			var linkX = $(this).offset().left + linkW/2;
-			var linkY = $(this).offset().top;
-
-			var newX = winW()/2 - linkX;
-			var newY = -linkY;
-
-			$('#manifesto').transition({
-				x: newX,
-				y: newY
-			}, 500);
-
-			$('#front').transition({
-				scale: scale
-			}, 500);
-
-			$('body').addClass('zoom');
-
-			$(this).addClass('selected');
-			var id = $(this)[0].id;
-
-			$('section#'+id).addClass('selected');
-
-		} else {
-			$('#manifesto').css({
-				x: 0,
-				y: 0
-			});
-
-			$('#front').transition({
-				scale: 1
-			}, 500);
-
-			$(this).removeClass('selected');
-		}
-
-		$('.image').hover(function() {
-			var image = $(this).children('img').attr('src');
-			$('#imageViewer').css({'backgroundImage':'url("'+image+'")'});
-			$('#imageViewer').addClass('hover');
-		}, function() {
-			$('#imageViewer').not('.clicked').css({'backgroundImage':''});
-			$('#imageViewer').removeClass('hover');
-		});
-		
-		$('.image').click(function() {
-			var image = $(this).children('img').attr('src');
-			$('#imageViewer').css({'backgroundImage':'url("'+image+'")'});
-			$('#imageViewer').removeClass('hover').addClass('clicked');
-		});
-	});
-
-	$(window).resize(function() {
-
-	});
-
-	function winW() {
-		return window.innerWidth
-	}
-	function winH() {
-		return window.innerHeight
-	}
-});
-	
-</script>
+<script type="text/javascript" src="jquery-ui.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
 </head>
 </html>
 <body>
@@ -83,9 +14,15 @@ $(function() {
 	<div id="front">
 		<div id="manifesto">
 			<div class="inner">
-			<p>Our <span id="students" class="link">students</span> approach graphic design as a vital field of professional art practice that gives shape to culture through media. The <span id="faculty" class="link">faculty</span> offer a distinctive program in the art and practice of print and digitally based graphic design and experimental publishing. The program approaches graphic design as a vital field of professional art practice that gives shape to culture through a variety of media: <span class="link tag">books</span>, <span class="link tag">magazines</span>, <span class="link tag">motion graphics</span>, <span class="link tag">web design</span>, <span class="link tag">type design</span>, <span class="link tag">exhibition design</span>, <span class="link tag">packaging</span>.</p>
+			<p class="text">
+			The Purchase College graphic design department offers a distinctive program in the art and practice of print and digitally based graphic design and experimental publishing. The program teaches <span id="students" class="link">students</span> to solve visual communication problems with words, symbols, and images through commercial, political, educational, literary, subversive, personal, and experimental applications. Our <span id="faculty" class="link">faculty</span> members are practicing professional artists with significant exhibition records and prestigious awards. The department's <span id="alumni" class="link">alumni</span> pursue careers in galleries and museums, national publications, art direction, education, and graduate study and research, and as independent, exhibiting studio artists.
 			</div>
 		</div>
+
+		<div class="tool" id="color">
+
+		</div>
+
 	</div>
 
 
