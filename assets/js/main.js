@@ -2,6 +2,7 @@ $(function() {
 	wrap();
 	$('.link').click(function() {
 		if(!$(this).hasClass('selected')) {
+			var speed = 500;
 			var scale = 3;
 			var linkW = $(this).width();
 			var linkH = $(this).height();
@@ -14,19 +15,30 @@ $(function() {
 			$('#manifesto').transition({
 				x: newX,
 				y: newY
-			}, 500);
+			}, speed);
 
 			$('#front').transition({
 				scale: scale
-			}, 500);
+			}, speed);
 
 			$('body').addClass('zoom');
 
 			$(this).addClass('selected');
 			var id = $(this)[0].id;
 			var padTop = ($(this).height() * scale) + 40;
-			$('section#'+id).css({paddingTop: padTop}).addClass('selected');
 
+
+			$selectedSection = $('section#'+id);
+			$selectedSection.css({paddingTop: padTop}).addClass('selected');
+
+			setTimeout(function() {
+				$blocks = shuffle($selectedSection.children('.blocks').children('.block'));
+				$.each($blocks, function(i, block) {
+					setTimeout(function() {
+						$blocks.eq(i).addClass('show');	
+					}, 30*i);
+				});
+			}, speed);
 		} else {
 			$('#manifesto').transition({
 				x: 0,
@@ -76,12 +88,6 @@ $(function() {
 	}
 
 	function typeset() {
-		var typefaces = [
-			"trocchi",
-			"pt-mono",
-			"maven-pro",
-			"open-sans"
-		];
 		var t = 0;
 		$('.word').click(function(e) {
 			if(!$(this).is('.selected')) {
@@ -94,15 +100,18 @@ $(function() {
 			} else {
 				$(this).removeClass('selected');
 			} 
-			
-			// $(this).attr('data-font', typefaces[t]);
-			// console.log(t, typefaces.length);
-			// if(t == typefaces.length) {
-			// 	t=0;	
-			// } else {
-			// 	t++;
-			// }
-			
+		});
+
+		// $('body').click(function(e) {
+		// 	console.log(!$(e.target).hasClass('word'));
+		// 	if(!$(e.target).hasClass('word')) {
+		// 		$('.word.selected').removeClass('selected');
+		// 	}
+		// });
+
+		$('#fontSelect').change(function(e) {
+			var font = e.target.value;
+			$('.word.selected').attr('data-font', font)
 		});
 	}
 
@@ -117,20 +126,13 @@ $(function() {
 	});
 
 
-	$('.images').imagesLoaded(function() {
-		$('.images').masonry({
+	$('.blocks').imagesLoaded(function() {
+		$('.blocks').masonry({
 			itemSelector: '.block',
 			columnWidth: '.image:last-child',
 			gutter: 20,
-			isFitWidth: true
-		});
-
-		$('.link#students').click(function() {
-			$.each($('.images .block'), function(i, block) {
-				setTimeout(function() {
-					$('.images .block:eq('+i+')').addClass('show');	
-				}, 50*i);
-			});
+			isFitWidth: true,
+			stamp: '.stamp'
 		});
 	});
 	
@@ -149,14 +151,4 @@ $(function() {
 		$('#imageViewer').css({'backgroundImage':'url("'+image+'")'});
 		$('#imageViewer').removeClass('hover').addClass('clicked');
 	});
-
-
-
-
-	function winW() {
-		return window.innerWidth
-	}
-	function winH() {
-		return window.innerHeight
-	}
 });

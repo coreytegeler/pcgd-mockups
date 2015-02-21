@@ -1,13 +1,13 @@
 <html>
 <head>
-<link href="style.css" type="text/css" rel="stylesheet"/>
+<link href="assets/style.css" type="text/css" rel="stylesheet"/>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script type="text/javascript" src="jquery.transit.min.js"></script>
-<script type="text/javascript" src="jquery-ui.min.js"></script>
-<script type="text/javascript" src="masonry.pkgd.min.js"></script>
-<script type="text/javascript" src="imagesloaded.pkgd.min.js"></script>
-
-<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="assets/js/jquery.transit.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="assets/js/masonry.pkgd.min.js"></script>
+<script type="text/javascript" src="assets/js/imagesloaded.pkgd.min.js"></script>
+<script type="text/javascript" src="assets/js/helpers.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
 </head>
 </html>
 <body>
@@ -23,30 +23,25 @@
 		</div>
 
 		<div class="tool" id="color">
+			<h1>Typeface</h1>
+			<select id="fontSelect">
+				<option value="maria">Maria Pro</option>
+			 	<option value="helvetica">Helvetica</option>
+				<option value="arial">Arial</option>
+				<option value="times">Times New Roman</option>
+				<option value="courier">Courier</option>
+			</select>
 
+			<div class="help">
+				Click the word you would like to change to select. Hold shift to select multiple.
+			</div>
 		</div>
 
 	</div>
 
 
 	<section class="people" id="faculty">
-		<div class="inner">
-			<p>Our faculty members are practicing professional artists with significant exhibition records and prestigious awards. Many are represented by galleries in New York, and many have written and published books. Their work can be found in private, corporate, and museum collections, including the Guggenheim Museum, Metropolitan Museum of Art, Museum of Modern Art, Smithsonian Institution, Victoria and Albert Museum, and Whitney Museum of American Art.</p>
-			<div class="images">
-				<div class="image">
-					<img src="mark.jpg"/>
-				</div>
-				<div class="image">
-					<img src="mark.jpg"/>
-				</div>
-				<div class="image">
-					<img src="mark.jpg"/>
-				</div>
-				<div class="image">
-					<img src="mark.jpg"/>
-				</div>
-			</div>
-		</div>
+
 	</section>
 
 
@@ -54,111 +49,112 @@
 		<!-- <div class="inner">
 			<p>Our faculty members are practicing professional artists with significant exhibition records and prestigious awards. Many are represented by galleries in New York, and many have written and published books. Their work can be found in private, corporate, and museum collections, including the Guggenheim Museum, Metropolitan Museum of Art, Museum of Modern Art, Smithsonian Institution, Victoria and Albert Museum, and Whitney Museum of American Art.</p>
 		</div> -->
-		<div class="images">
-			<div class="block text col2">
+		<div class="blocks">
+			<div class="stamp"></div>
+			<div class="block text">
 				Our faculty members are practicing professional artists with significant exhibition records and prestigious awards. Many are represented by galleries in New York, and many have written and published books. Their work can be found in private, corporate, and museum collections, including the Guggenheim Museum, Metropolitan Museum of Art, Museum of Modern Art, Smithsonian Institution, Victoria and Albert Museum, and Whitney Museum of American Art.
 			</div>
 			<div class="poster image block">
-				<img src="img/posters/1.jpg"/>
+				<img src="assets/img/posters/1.jpg"/>
 			</div>
 			<div class="poster image block">
-				<img src="img/posters/2.jpg"/>
-			</div>
-			<div class="poster image block">
-				<img src="img/posters/3.jpg"/>
-			</div>
-			<div class="poster image block">
-				<img src="img/posters/4.jpg"/>
+				<img src="assets/img/posters/2.jpg"/>
 			</div>
 			<div class="poster image block feature">
-				<img src="img/posters/5.jpg"/>
+				<img src="assets/img/posters/3.jpg"/>
 			</div>
 			<div class="poster image block">
-				<img src="img/posters/6.jpg"/>
-			</div>
-			<div class="poster image block">
-				<img src="img/posters/7.jpg"/>
-			</div>
-			<div class="poster image block">
-				<img src="img/posters/8.jpg"/>
-			</div>
-			<div class="poster image block">
-				<img src="img/posters/9.jpg"/>
-			</div>
-			<div class="poster image block">
-				<img src="img/posters/10.jpg"/>
-			</div>
-			<div class="poster image block">
-				<img src="img/posters/11.jpg"/>
-			</div>
-			<div class="poster image block">
-				<img src="img/posters/12.jpg"/>
-			</div>
-			<div class="poster image block">
-				<img src="img/posters/13.jpg"/>
-			</div>
-			<div class="poster image block">
-				<img src="img/posters/14.jpg"/>
-			</div>
-			<div class="poster image block">
-				<img src="img/posters/15.jpg"/>
-			</div>
-			<div class="poster image block">
-				<img src="img/posters/16.jpg"/>
-			</div>
-			<div class="poster image block">
-				<img src="img/posters/17.jpg"/>
-			</div>
-			<div class="poster image block">
-				<img src="img/posters/18.jpg"/>
-			</div>
-			<div class="poster image block">
-				<img src="img/posters/19.jpg"/>
-			</div>
-			<div class="poster image block">
-				<img src="img/posters/20.jpg"/>
-			</div>
-			<div class="poster image block">
-				<img src="img/posters/21.jpg"/>
-			</div>
-			<div class="poster image block">
-				<img src="img/posters/22.jpg"/>
+				<img src="assets/img/posters/4.jpg"/>
 			</div>
 			<div class="poster image block feature">
-				<img src="img/posters/23.jpg"/>
+				<img src="assets/img/posters/5.jpg"/>
 			</div>
 			<div class="poster image block">
-				<img src="img/motion/1.gif"/>
+				<img src="assets/img/posters/6.jpg"/>
 			</div>
 			<div class="poster image block">
-				<img src="img/motion/2.gif"/>
+				<img src="assets/img/posters/7.jpg"/>
 			</div>
 			<div class="poster image block">
-				<img src="img/motion/3.gif"/>
+				<img src="assets/img/posters/8.jpg"/>
 			</div>
 			<div class="poster image block">
-				<img src="img/motion/4.gif"/>
+				<img src="assets/img/posters/9.jpg"/>
+			</div>
+			<div class="poster image block">
+				<img src="assets/img/posters/10.jpg"/>
+			</div>
+			<div class="poster image block">
+				<img src="assets/img/posters/11.jpg"/>
+			</div>
+			<div class="poster image block">
+				<img src="assets/img/posters/12.jpg"/>
+			</div>
+			<div class="poster image block">
+				<img src="assets/img/posters/13.jpg"/>
+			</div>
+			<div class="poster image block">
+				<img src="assets/img/posters/14.jpg"/>
+			</div>
+			<div class="poster image block">
+				<img src="assets/img/posters/15.jpg"/>
+			</div>
+			<div class="poster image block">
+				<img src="assets/img/posters/16.jpg"/>
+			</div>
+			<div class="poster image block">
+				<img src="assets/img/posters/17.jpg"/>
+			</div>
+			<div class="poster image block">
+				<img src="assets/img/posters/18.jpg"/>
+			</div>
+			<div class="poster image block">
+				<img src="assets/img/posters/19.jpg"/>
+			</div>
+			<div class="poster image block">
+				<img src="assets/img/posters/20.jpg"/>
+			</div>
+			<div class="poster image block">
+				<img src="assets/img/posters/21.jpg"/>
+			</div>
+			<div class="poster image block">
+				<img src="assets/img/posters/22.jpg"/>
 			</div>
 			<div class="poster image block feature">
-				<img src="img/motion/5.gif"/>
+				<img src="assets/img/posters/23.jpg"/>
 			</div>
 			<div class="poster image block">
-				<img src="img/books/1.jpg"/>
+				<img src="assets/img/motion/1.gif"/>
 			</div>
 			<div class="poster image block">
-				<img src="img/books/2.jpg"/>
-			</div>
-			<div class="poster image block">
-				<img src="img/books/3.jpg"/>
+				<img src="assets/img/motion/2.gif"/>
 			</div>
 			<div class="poster image block feature">
-				<img src="img/books/4.gif"/>
+				<img src="assets/img/motion/3.gif"/>
 			</div>
 			<div class="poster image block">
-				<img src="img/books/5.jpg"/>
+				<img src="assets/img/motion/4.gif"/>
+			</div>
+			<div class="poster image block feature">
+				<img src="assets/img/motion/5.gif"/>
 			</div>
 			<div class="poster image block">
-				<img src="img/books/6.gif"/>
+				<img src="assets/img/books/1.jpg"/>
+			</div>
+			<div class="poster image block">
+				<img src="assets/img/books/2.jpg"/>
+			</div>
+			<div class="poster image block">
+				<img src="assets/img/books/3.jpg"/>
+			</div>
+			<div class="poster image block feature">
+				<img src="assets/img/books/4.gif"/>
+			</div>
+			<div class="poster image block">
+				<img src="assets/img/books/5.jpg"/>
+			</div>
+			<div class="poster image block">
+				<img src="assets/img/books/6.gif"/>
 			</div>
 		</div>
 	</section>
