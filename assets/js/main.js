@@ -61,7 +61,7 @@ $(function() {
 	});
 
 	function wrap() {
-		var manifesto = $('#manifesto p');
+		var manifesto = $('#manifesto .text .copy');
 		var words = manifesto.text().split(' ');
 		manifesto.empty();
 
@@ -77,7 +77,8 @@ $(function() {
 			var link = links.indexOf(word);
 			if(link != -1) {
 				manifesto.append($("<span class='link' id='" + word + "'>"+word+"</span>")).append('\u00A0');
-			} else {
+			} 
+			else {
 				manifesto.append($("<span class='word'>"+word+"</span>")).append('<span> </span>');
 			}
 
@@ -111,8 +112,30 @@ $(function() {
 
 		$('#fontSelect').change(function(e) {
 			var font = e.target.value;
-			$('.word.selected').attr('data-font', font)
+			$('.word.selected').attr('data-font', font);
 		});
+
+		$('.tool #styling h2').click(function(e) {
+			var style = $(this).attr('data-style');
+			$selected = $('.word.selected');
+			console.log(style, $selected.attr('data-style'));
+			if(style === $selected.attr('data-style')) {
+				$selected.attr('data-style', '');
+			} else {
+				$selected.attr('data-style', style);
+			}
+			
+		});
+
+		$('.tool .close').click(function() {
+			$(this).parent('.tool').addClass('closed');
+		});
+
+		// $('.tool').click(function() {
+		// 	if($(this).hasClass('closed')) {
+		// 		$(this).removeClass('closed');	
+		// 	}
+		// });
 	}
 
 

@@ -65,7 +65,7 @@ div {
 	transform-origin: 50% top;
 }
 #front #manifesto {
-	position: absolute;
+	position: fixed;
 	top:0;
 	left: 0;
 	height: 100%;
@@ -100,6 +100,10 @@ div {
 	vertical-align: middle;
 	padding: 30px;
 }
+#manifesto .inner .title {
+	font-size: 45px;
+	font-weight: bolder;
+}
 .word {
 	-webkit-transition: all 100ms ease;
 	-moz-transition: all 100ms ease;
@@ -109,11 +113,11 @@ div {
 .word:hover {
 	cursor: pointer;
 	/*text-shadow: 0 0 20px rgba(254,234,94,1);*/
-	text-shadow: 0px 1px 5px rgba(0,0,0,.2);
+	background-color: rgba(254,234,94,.4);
 }
 .word.selected {
 	/*border: 1px dotted black;*/
-	background: rgba(255,255,0,.5)
+	background: rgba(254,234,94,1);
 }
 .link {
 	cursor: pointer;
@@ -136,12 +140,35 @@ div {
 	/*height: 100px;*/
 	right: 50px;
 	top: 50%;
-	margin-top: -100px;
 	background: rgba(254,234,94,1);
 	box-shadow: 0px 3px 10px rgba(0,0,0,.1);
 	border-radius: 6px;
 	padding: 10px;
+	z-index: 100;
 	/*opacity: .4;*/
+}
+.tool.closed {
+	width: 12px;
+	height: 12px;
+	overflow: hidden;
+	top:10px;
+	right: 10px;
+}
+.tool.closed *:not(.close) {
+	opacity: 0;
+}
+.tool.closed .close {
+	transform: rotateZ(45deg);
+	-moz-transform: rotateZ(45deg);
+	-webkit-transform: rotateZ(45deg);
+}
+.tool .close {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	font-size: 20px;
+	line-height: 20px;
+	cursor: pointer;
 }
 .tool.dragging, .tool:hover {
 	cursor: move;
@@ -153,9 +180,28 @@ div {
 	margin: 0 0 10px 0;
 	padding: 0;
 }
+.tool h2 {
+	font-size: 20px;
+	line-height: 20px;
+	margin: 10px 0 5px 0;
+	padding: 0;
+	font-weight: normal;
+}
 .tool select {
 	display: block;
 }
+.tool h2 {
+	cursor: pointer;
+}
+*[data-style="italic"] {
+	font-style: italic !important;
+}
+*[data-style="underline"] {
+	text-decoration: underline !important;
+} 
+*[data-style="strike"] {
+	text-decoration: line-through !important;
+} 
 .tool .help {
 	display: block;
 	margin: 15px 0 0 0;
@@ -210,6 +256,9 @@ section {
 	display: block;
 	float: left;
 	opacity: 0;
+	-webkit-transition: opacity 200ms ease;
+	-moz-transition: opacity 200ms ease;
+	transition: opacity 200ms ease;
 }
 .people .blocks .block.show {
 	opacity: 1;
