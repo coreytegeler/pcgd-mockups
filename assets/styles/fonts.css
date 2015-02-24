@@ -1,0 +1,105 @@
+@font-face {
+	font-family:'Base Nine';
+	src:url("fonts/basenine/basenine.eot");
+	src:url("fonts/basenine/basenine.eot?#iefix") format('embedded-opentype'),
+	    url("fonts/basenine/basenine.woff") format('woff'),
+	    url("fonts/basenine/basenine.ttf") format('truetype'),
+	    url("fonts/basenine/basenine.svg#Maria Pro") format('svg');
+	font-weight:'normal';
+	font-style:normal;
+}
+*[data-font='basenine'] {
+	font-family: 'Base Nine', sans-serif;	
+}
+@font-face {
+	font-family:'Baskerville';
+	src:url("fonts/baskerville/baskerville.eot");
+	src:url("fonts/baskerville/baskerville.eot?#iefix") format('embedded-opentype'),
+	    url("fonts/baskerville/baskerville.woff") format('woff'),
+	    url("fonts/baskerville/baskerville.ttf") format('truetype'),
+	    url("fonts/baskerville/baskerville.svg#Maria Pro") format('svg');
+	font-weight:'normal';
+	font-style:normal;
+}
+*[data-font='baskerville'] {
+	font-family: 'Baskerville', sans-serif;	
+}
+@font-face {
+	font-family:'Clarendon';
+	src:url("fonts/clarendon/clarendon.eot");
+	src:url("fonts/clarendon/clarendon.eot?#iefix") format('embedded-opentype'),
+	    url("fonts/clarendon/clarendon.woff") format('woff'),
+	    url("fonts/clarendon/clarendon.ttf") format('truetype'),
+	    url("fonts/clarendon/clarendon.svg#Maria Pro") format('svg');
+	font-weight:'normal';
+	font-style:normal;
+}
+*[data-font='clarendon'] {
+	font-family: 'Clarendon', sans-serif;	
+}
+@font-face {
+	font-family:'Didot';
+	src:url("fonts/didot/didot.eot");
+	src:url("fonts/didot/didot.eot?#iefix") format('embedded-opentype'),
+	    url("fonts/didot/didot.woff") format('woff'),
+	    url("fonts/didot/didot.ttf") format('truetype'),
+	    url("fonts/didot/didot.svg#Maria Pro") format('svg');
+	font-weight:'normal';
+	font-style:normal;
+}
+*[data-font='didot'] {
+	font-family: 'Didot', sans-serif;	
+}
+@font-face {
+	font-family:'Futura';
+	src:url("fonts/futura/futura.eot");
+	src:url("fonts/futura/futura.eot?#iefix") format('embedded-opentype'),
+	    url("fonts/futura/futura.woff") format('woff'),
+	    url("fonts/futura/futura.ttf") format('truetype'),
+	    url("fonts/futura/futura.svg#Maria Pro") format('svg');
+	font-weight:'normal';
+	font-style:normal;
+}
+*[data-font='futura'] {
+	font-family: 'Futura', sans-serif;	
+}
+@font-face {
+	font-family:'Gill Sans';
+	src:url("fonts/gillsans/gillsans.eot");
+	src:url("fonts/gillsans/gillsans.eot?#iefix") format('embedded-opentype'),
+	    url("fonts/gillsans/gillsans.woff") format('woff'),
+	    url("fonts/gillsans/gillsans.ttf") format('truetype'),
+	    url("fonts/gillsans/gillsans.svg#Maria Pro") format('svg');
+	font-weight:'normal';
+	font-style:normal;
+}
+*[data-font='gillsans'] {
+	font-family: 'Gill Sans', sans-serif;	
+}
+@font-face {
+	font-family:'Maria';
+	src:url("fonts/mariapro/maria.eot");
+	src:url("fonts/mariapro/maria.eot?#iefix") format('embedded-opentype'),
+	    url("fonts/mariapro/maria.woff") format('woff'),
+	    url("fonts/mariapro/maria.ttf") format('truetype'),
+	    url("fonts/mariapro/maria.svg#Maria Pro") format('svg');
+	font-weight:'normal';
+	font-style:normal;
+}
+*[data-font='mariapro'] {
+	font-family: 'Maria Pro', sans-serif;	
+}
+@font-face {
+	font-family:'Matrix Script';
+	src:url("fonts/matrixscript/matrixscript.eot");
+	src:url("fonts/matrixscript/matrixscript.eot?#iefix") format('embedded-opentype'),
+	    url("fonts/matrixscript/matrixscript.woff") format('woff'),
+	    url("fonts/matrixscript/matrixscript.ttf") format('truetype'),
+	    url("fonts/matrixscript/matrixscript.svg#Maria Pro") format('svg');
+	font-weight:'normal';
+	font-style:normal;
+}
+*[data-font='matrixscript'] {
+	font-family: 'Matrix Script', sans-serif;	
+}
+

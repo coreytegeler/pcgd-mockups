@@ -1,14 +1,3 @@
-@font-face {
-	font-family:'Maria';
-	src:url("fonts/maria.eot");
-	src:url("fonts/maria.eot?#iefix") format('embedded-opentype'),
-	    url("fonts/maria.woff") format('woff'),
-	    url("fonts/maria.ttf") format('truetype'),
-	    url("fonts/maria.svg#Maria Pro") format('svg');
-	font-weight:'normal';
-	font-style:normal;
-}
-
 body {
 	margin: 0;
 	/*height: 100%;
@@ -23,43 +12,29 @@ body[data-color='white'] {
 	background: rgba(240,255,240,.5);
 }
 body[data-color='yellow'] {
-	background: yellow;
+	background: #ffff71;
 }
 body[data-color='red'] {
-	background: #f38386;
+	background: #ff4517;
 }
 body[data-color='blue'] {
-	background: blue;
+	background: #008ecd;
 }
-body[data-color='blue'] .text {
+/*body[data-color='blue'] .text {
 	color: white;
 }
 body[data-color='blue'] .link {
 	color: red;
-}
-body[data-color='pink'] {
-	background: pink;
+}*/
+body[data-color='green'] {
+	background: #38ea80;
 }
 
 div {
 	display: inline;
 }
 
-*[data-font='arial'] {
-	font-family: 'Arial', sans-serif;	
-}
-*[data-font='times'] {
-	font-family: 'Times New Roman', serif;
-}
-*[data-font='courier'] {
-	font-family: 'Courier', monospace;
-}
-*[data-font='helvetica'] {
-	font-family: 'Helvetica', sans-serif;	
-}
-*[data-font='maria'] {
-	font-family: 'Maria', sans-serif;	
-}
+
 #front {
 	position: fixed;
 	top:0;
@@ -113,7 +88,7 @@ div {
 	padding: 30px;
 }
 #manifesto .inner .title {
-	font-size: 45px;
+	/*font-size: 45px;*/
 	font-weight: bolder;
 }
 .word {
@@ -184,9 +159,15 @@ div {
 	left: 50px;
 	bottom: 50px;
 }
-.zoom .tool {
+.zoom .tool#type {
 	top: 10px;
 	right: 10px;
+	left: auto;
+}
+.zoom .tool#page {
+	top: 62px;
+	right: 10px;
+	left: auto;
 }
 
 .tool .close {
@@ -278,6 +259,10 @@ section {
 	line-height: 35px;
 	width: 420px !important;
 }
+.block.text .link[data-style="strike"]:hover {
+	text-decoration: none !important;
+}
+
 .people .blocks {
 	padding: 0 30px;
 	display: table;
@@ -330,4 +315,16 @@ section {
 	background-size: auto 80%;
 	opacity: 1;
 	z-index: 5;
+}
+
+.zoomOut {
+	display: none;
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	font-size: 40px;
+	cursor: pointer;
+}
+.zoom .zoomOut {
+	display: block;
 }
