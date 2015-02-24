@@ -172,7 +172,7 @@ $(function() {
 
 
 
-	var masonryParams = {
+	masonryParams = {
 		itemSelector: '.block',
 		columnWidth: '.image:last-child',
 		gutter: 20,
@@ -202,28 +202,41 @@ $(function() {
 
 
 	$('.block.text .link').click(function(e) {
-		var id = $(this)[0].id;
-		$section = $('section.selected');
-		$allBlocks = $section.children('.blocks').children('.block.image');
-		$.each($allBlocks, function(i, block) {
-			$this = $(block);
-			if(!$this.hasClass(id)) {
-				$this.addClass('hide');
-			} else {
-				$this.removeClass('hide');
-			}
-		});
-		$('.blocks').masonry(masonryParams);
+		if(!$(this).hasClass('selected')) {
+			$(this).addClass('selected');
+			var id = $(this)[0].id;
+			$section = $('section.selected');
+			$allBlocks = $section.children('.blocks').children('.block.image');
+			$.each($allBlocks, function(i, block) {
+				$this = $(block);
+				if(!$this.hasClass(id)) {
+					$this.addClass('hide');
+				} else {
+					$this.removeClass('hide');
+				}	
+			});
+			$('.blocks').masonry('layout');
 
+			$.each($(this).parent('.text').children('.link'), function(i, link) {
+				$this = $(link);
+				if($this[0].id != id) {
+					$this.attr('data-style', 'strike');
+				} else {
+					$this.attr('data-style', '');
+				}
+			});
+		} else {
+			$(this).removeClass('selected');
+			$section = $('section.selected');
+			$allBlocks = $section.children('.blocks').children('.block.image');
+			$.each($allBlocks, function(i, block) {
+				$(block).removeClass('hide');
+			});
+			$('.blocks').masonry('layout');
 
-		$.each($(this).parent('.text').children('.link'), function(i, link) {
-			$this = $(link);
-			console.log(id)
-			if($this[0].id != id) {
-				$this.attr('data-style', 'strike');
-			} else {
-				$this.attr('data-style', '');
-			}
-		});
+			$.each($(this).parent('.text').children('.link'), function(i, link) {
+				$(link).attr('data-style', '');
+			});
+		}
 	});
 });
