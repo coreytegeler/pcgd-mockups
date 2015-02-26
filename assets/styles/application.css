@@ -41,6 +41,7 @@ div {
 	left: 0;
 	height: 100%;
 	width: 100%;
+	overflow-y: scroll;
 	font-size: 35px;
 	line-height: 50px;
 	color: rgba(0,0,0,1);
@@ -56,7 +57,14 @@ div {
 	top:0;
 	left: 0;
 	height: 100%;
-	width: 100%;
+	max-width: 900px;
+	padding: 50px;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 .zoom #front {
 	color: rgba(0,0,0,.08);
@@ -69,25 +77,15 @@ div {
 	width: 80%;
 	max-width: 1200px;
 	min-width: 600px;
-	display: table;
-	margin: auto;
+	/*display: table;
+	margin: auto;*/
 }
 .inner .text {
-	text-align: justify;
-    text-justify: inter-word;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+	/*text-align: justify;
+    text-justify: inter-word;*/
+    
 }
-#manifesto .inner .text {
-    display: table-cell;
-	vertical-align: middle;
-	padding: 30px;
-}
-#manifesto .inner .title {
+#manifesto .title {
 	/*font-size: 45px;*/
 	font-weight: bolder;
 }
@@ -103,8 +101,8 @@ div {
 	background-color: rgba(254,234,94,.4);
 }
 .word.highlighted {
-	/*border: 1px dotted black;*/
-	background: rgba(254,234,94,1);
+	/*background: rgba(254,234,94,1);*/
+	background: -webkit-linear-gradient(left, rgba(254,234,94,1), rgba(255,20,20,2));
 }
 .link {
 	cursor: pointer;
@@ -156,7 +154,7 @@ div {
 	top: 50px;
 }
 .tool#page {
-	left: 50px;
+	right: 100px;
 	bottom: 50px;
 }
 .zoom .tool#type {

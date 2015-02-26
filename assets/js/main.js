@@ -78,7 +78,7 @@ $(function() {
 	});
 
 	function wrap() {
-		var manifesto = $('#manifesto .text .copy');
+		var manifesto = $('#manifesto .copy');
 		var words = manifesto.text().split(' ');
 		manifesto.empty();
 
