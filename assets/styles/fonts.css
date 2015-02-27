@@ -136,11 +136,11 @@
 
 @font-face {
 	font-family:'Perpetua';
-	src:url("fonts/mariapro/perpetua.eot");
-	src:url("fonts/mariapro/perpetua.eot?#iefix") format('embedded-opentype'),
-	    url("fonts/mariapro/perpetua.woff") format('woff'),
-	    url("fonts/mariapro/perpetua.ttf") format('truetype'),
-	    url("fonts/mariapro/perpetua.svg#Maria Pro") format('svg');
+	src:url("fonts/perpetua/perpetua.eot");
+	src:url("fonts/perpetua/perpetua.eot?#iefix") format('embedded-opentype'),
+	    url("fonts/perpetua/perpetua.woff") format('woff'),
+	    url("fonts/perpetua/perpetua.ttf") format('truetype'),
+	    url("fonts/perpetua/perpetua.svg#Perpetua") format('svg');
 	font-weight:'normal';
 	font-style:normal;
 }
