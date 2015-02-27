@@ -14,56 +14,67 @@
 <body data-color="white">
 	<div id="front">
 		<div id="manifesto">
-			<span class="title">The Purchase College Graphic Design Department</span> <span class="copy">offers a distinctive community in the art and practice of print and digitally based graphic design and experimental publishing. The program teaches students to solve visual communication problems with words, symbols, and image blocks through commercial, political, educational, literary, subversive, personal, and experimental applications. Our faculty members are practicing professional artists with significant exhibition records and prestigious awards. The department's alumni pursue careers in galleries and museums, national publications, art direction, education, and graduate study and research, and as independent, exhibiting studio artists. Blah blah blah, apply now!</span>
+			<div class="text">
+				<span class="title">The Purchase College Graphic Design Department</span> <span class="copy">offers a distinctive community in the art and practice of print and digitally based graphic design and experimental publishing. The program teaches students to solve visual communication problems with words, symbols, and image blocks through commercial, political, educational, literary, subversive, personal, and experimental applications. Our faculty members are practicing professional artists with significant exhibition records and prestigious awards. The department's alumni pursue careers in galleries and museums, national publications, art direction, education, and graduate study and research, and as independent, exhibiting studio artists. Blah blah blah, apply now!</span>
+			</div>
 		</div>
 	</div>
 
-	<div class="tool" id="type">
-		<div class="close">✖</div>
-		<h1>Typography</h1>
-		<select id="fontSelect">
-		 	<option value="basenine">Base Nine</option>
-			<option value="baskerville">Baskerville</option>
-			<option value="clarendon">Clarendon</option>
-			<option value="didot">Didot</option>
-			<option value="futura">Futura</option>
-			<option value="gillsans">Gill Sans</option>
-			<option selected="selected" value="maria">Maria Pro</option>
-			<option value="matrixscript">Matrix Script</option>
-		</select>
-		<div id="styling">
-			<h2 data-style="italic">Italicize</h2>
-			<h2 data-style="underline">Underline</h2>
-			<h2 data-style="strike">Strikethrough</h2>
-		</div>
+	<div id="tool">
+		<header>
+			<h1>Toolbar</h1>
+			<div id="buttons">
+				<div class="button" id="lock">&#9755;</div>
+				<div class="button" id="close">✖</div>
+			</div>
+		</header>
+		<main>
+			<section id="typography">
+				<h2>Typography</h2>
+				<!-- <div class="help">
+					Click the word you would like to change to select. Hold shift to select multiple.
+				</div> -->
+				<select id="fontSelect">
+				 	<option value="basenine">Base Nine</option>
+					<option value="baskerville">Baskerville</option>
+					<option value="clarendon">Clarendon</option>
+					<option value="didot">Didot</option>
+					<option value="futura">Futura</option>
+					<option value="gillsans">Gill Sans</option>
+					<option selected="selected" value="maria">Maria Pro</option>
+					<option value="matrixscript">Matrix Script</option>
+				</select>
+				<div id="styling">
+					<h3 data-style="italic">Italicize</h3>
+					<h3 data-style="underline">Underline</h3>
+					<h3 data-style="strike">Strikethrough</h3>
+				</div>
+			</section>
 
-		<div class="help">
-			Click the word you would like to change to select. Hold shift to select multiple.
-		</div>
-	</div>
-
-
-	<div class="tool" id="page">
-		<div class="close">✖</div>
-		<h1>Background</h1>
-
-		<h2>Color</h2>
-		<select id="colorSelect">
-			<option value="blue">Blue</option>
-			<option value="green">Green</option>
-			<option value="red">Red</option>
-			<option selected="selected" value="white">White</option>
-			<option value="yellow">Yellow</option>
-		</select>
-		<h2>Pattern</h2>
-		<select id="patternSelect">
-			<option value="none">None</option>
 			
-		</select>
+			<section id="background">
+				<h2>Background</h2>
+				<div class="square" data-color="blue"></div>
+				<div class="square" data-color="green"></div>
+				<div class="square" data-color="red"></div>
+				<div class="square" data-color="white"></div>
+				<div class="square" data-color="yellow"></div>
+				<div class="square" data-pattern="grid"></div>
+				<div class="square" data-pattern="dot"></div>
+				<div class="square" data-pattern="pink-diagonal"></div>
+				<div class="square" data-pattern="pink-x"></div>
+				<div class="square" data-pattern="horz-cyan"></div>
+				<div class="square" data-pattern="scattered-sticks"></div>
 
-		<!-- <div class="help">
-			Click the word you would like to change to select. Hold shift to select multiple.
-		</div> -->
+				<!-- <select id="colorSelect">
+					<option value="blue">Blue</option>
+					<option value="green">Green</option>
+					<option value="red">Red</option>
+					<option selected="selected" value="white">White</option>
+					<option value="yellow">Yellow</option>
+				</select> -->
+			</section>
+		</main>
 	</div>
 
 

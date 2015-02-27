@@ -23,7 +23,7 @@ $(function() {
 
 			$('body').addClass('zoom');
 
-			$('.tool').addClass('closed');
+			$('#tool').addClass('closed');
 
 			$(this).addClass('selected');
 			var id = $(this)[0].id;
@@ -132,7 +132,7 @@ $(function() {
 			$('.word.highlighted').attr('data-font', font);
 		});
 
-		$('.tool #styling h2').click(function(e) {
+		$('#tool #styling h3').click(function(e) {
 			var style = $(this).attr('data-style');
 			$selected = $('.word.highlighted');
 			console.log(style, $selected.attr('data-style'));
@@ -145,18 +145,28 @@ $(function() {
 		});
 
 		
-		// $('.tool').click(function() {
+		// $('#tool').click(function() {
 		// 	if($(this).hasClass('closed')) {
 		// 		$(this).removeClass('closed');	
 		// 	}
 		// });
 	}
 
-	$('.tool .close').click(function() {
-		$(this).parent('.tool').toggleClass('closed','');
+	$('#tool #close').click(function() {
+		$(this).parent('#tool').toggleClass('closed','');
 	});
 
-	$('.tool').draggable({
+	$('#tool #lock').click(function() {
+		$('body').toggleClass('locked','');
+		if($('body').is('.locked')) {
+			$(this).html('&#9754;');
+		} else {
+			$(this).html('&#9755;');
+		}
+		
+	});
+
+	$('body:not(.locked) #tool').draggable({
 		start: function() {
 			$(this).addClass('dragging');
 		},
@@ -165,9 +175,23 @@ $(function() {
 		}
 	});
 
-	$('#colorSelect').change(function(e) {
-		var color = e.target.value;
-		$('body').attr('data-color', color);
+	$('#tool #background .square').click(function() {
+		if($(this).attr('data-color')) {
+			var color = $(this).attr('data-color');
+			if($('body').attr('data-color') == color) {
+				$('body').attr('data-color', '');	
+			} else {
+				$('body').attr('data-color', color);	
+			}
+		}
+		if($(this).attr('data-pattern')) {
+			var pattern = $(this).attr('data-pattern');
+			if($('body').attr('data-pattern') == pattern) {
+				$('body').attr('data-pattern', '');	
+			} else {
+				$('body').attr('data-pattern', pattern);	
+			}
+		}
 	});
 
 
