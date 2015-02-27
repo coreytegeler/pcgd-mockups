@@ -9,7 +9,10 @@ $(function() {
 			var linkX = $(this).offset().left + linkW/2;
 			var linkY = $(this).offset().top;
 
+			// MIDDLE
 			var newX = winW()/2 - linkX;
+			// LEFT
+			// var newX = 0;
 			var newY = -linkY + 10;
 
 			$('#manifesto').transition({
@@ -23,16 +26,15 @@ $(function() {
 
 			$('body').addClass('zoom');
 
-			$('#tool').addClass('closed');
 
 			$(this).addClass('selected');
 			var id = $(this)[0].id;
-			var padTop = ($(this).height() * scale) + 40;
+			var marginTop = ($(this).height() * scale) + 40;
 
 			$('#manifesto .link.highlighted').removeClass('selected');
 
 			$selectedSection = $('section#'+id);
-			$selectedSection.css({paddingTop: padTop}).addClass('selected');
+			$selectedSection.css({marginTop: marginTop}).addClass('selected');
 
 			setTimeout(function() {
 				$blocks = shuffle($selectedSection.children('.blocks').children('.block'));
@@ -42,10 +44,6 @@ $(function() {
 					}, 30*i);
 				});
 			}, speed);
-
-			$('.zoomOut').click(function() {
-				zoomOut();
-			});
 
 		} else {
 			zoomOut();
@@ -120,6 +118,10 @@ $(function() {
 			} 
 		});
 
+		$('#unselect').click(function(e) {
+			$('.word.highlighted').removeClass('highlighted');
+		});
+
 		// $('body').click(function(e) {
 		// 	console.log(!$(e.target).hasClass('word'));
 		// 	if(!$(e.target).hasClass('word')) {
@@ -153,7 +155,7 @@ $(function() {
 	}
 
 	$('#tool #close').click(function() {
-		$(this).parent('#tool').toggleClass('closed','');
+		$('#tool').toggleClass('closed','');
 	});
 
 	$('#tool #lock').click(function() {

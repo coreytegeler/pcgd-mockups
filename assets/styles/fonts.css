@@ -1,17 +1,4 @@
 @font-face {
-	font-family:'Base Nine';
-	src:url("fonts/basenine/basenine.eot");
-	src:url("fonts/basenine/basenine.eot?#iefix") format('embedded-opentype'),
-	    url("fonts/basenine/basenine.woff") format('woff'),
-	    url("fonts/basenine/basenine.ttf") format('truetype'),
-	    url("fonts/basenine/basenine.svg#Maria Pro") format('svg');
-	font-weight:'normal';
-	font-style:normal;
-}
-*[data-font='basenine'] {
-	font-family: 'Base Nine', sans-serif;	
-}
-@font-face {
 	font-family:'Baskerville';
 	src:url("fonts/baskerville/baskerville.eot");
 	src:url("fonts/baskerville/baskerville.eot?#iefix") format('embedded-opentype'),
@@ -76,8 +63,65 @@
 *[data-font='gillsans'] {
 	font-family: 'Gill Sans', sans-serif;	
 }
+
 @font-face {
-	font-family:'Maria';
+    font-family: 'HelveticaLTStdBold';
+    src: url('fonts/helvetica/HelveticaLTStdBold.eot');
+    src: url('fonts/helvetica/HelveticaLTStdBold.eot') format('embedded-opentype'),
+         url('fonts/helvetica/HelveticaLTStdBold.woff2') format('woff2'),
+         url('fonts/helvetica/HelveticaLTStdBold.woff') format('woff'),
+         url('fonts/helvetica/HelveticaLTStdBold.ttf') format('truetype'),
+         url('fonts/helvetica/HelveticaLTStdBold.svg#HelveticaLTStdBold') format('svg');
+}
+@font-face {
+    font-family: 'HelveticaLTStdBlkCond';
+    src: url('fonts/helvetica/HelveticaLTStdBlkCond.eot');
+    src: url('fonts/helvetica/HelveticaLTStdBlkCond.eot') format('embedded-opentype'),
+         url('fonts/helvetica/HelveticaLTStdBlkCond.woff2') format('woff2'),
+         url('fonts/helvetica/HelveticaLTStdBlkCond.woff') format('woff'),
+         url('fonts/helvetica/HelveticaLTStdBlkCond.ttf') format('truetype'),
+         url('fonts/helvetica/HelveticaLTStdBlkCond.svg#HelveticaLTStdBlkCond') format('svg');
+}
+@font-face {
+    font-family: 'HelveticaLTStdCond';
+    src: url('fonts/helvetica/HelveticaLTStdCond.eot');
+    src: url('fonts/helvetica/HelveticaLTStdCond.eot') format('embedded-opentype'),
+         url('fonts/helvetica/HelveticaLTStdCond.woff2') format('woff2'),
+         url('fonts/helvetica/HelveticaLTStdCond.woff') format('woff'),
+         url('fonts/helvetica/HelveticaLTStdCond.ttf') format('truetype'),
+         url('fonts/helvetica/HelveticaLTStdCond.svg#HelveticaLTStdCond') format('svg');
+}
+@font-face {
+    font-family: 'HelveticaLTStdBlk';
+    src: url('fonts/helvetica/HelveticaLTStdBlk.eot');
+    src: url('fonts/helvetica/HelveticaLTStdBlk.eot') format('embedded-opentype'),
+         url('fonts/helvetica/HelveticaLTStdBlk.woff2') format('woff2'),
+         url('fonts/helvetica/HelveticaLTStdBlk.woff') format('woff'),
+         url('fonts/helvetica/HelveticaLTStdBlk.ttf') format('truetype'),
+         url('fonts/helvetica/HelveticaLTStdBlk.svg#HelveticaLTStdBlk') format('svg');
+}
+@font-face {
+    font-family: 'HelveticaLTStdRoman';
+    src: url('fonts/helvetica/HelveticaLTStdRoman.eot');
+    src: url('fonts/helvetica/HelveticaLTStdRoman.eot') format('embedded-opentype'),
+         url('fonts/helvetica/HelveticaLTStdRoman.woff2') format('woff2'),
+         url('fonts/helvetica/HelveticaLTStdRoman.woff') format('woff'),
+         url('fonts/helvetica/HelveticaLTStdRoman.ttf') format('truetype'),
+         url('fonts/helvetica/HelveticaLTStdRoman.svg#HelveticaLTStdRoman') format('svg');
+}
+@font-face {
+    font-family: 'HelveticaLTStdBold';
+    src: url('fonts/helvetica/HelveticaLTStdBold.eot');
+    src: url('fonts/helvetica/HelveticaLTStdBold.eot') format('embedded-opentype'),
+         url('fonts/helvetica/HelveticaLTStdBold.woff2') format('woff2'),
+         url('fonts/helvetica/HelveticaLTStdBold.woff') format('woff'),
+         url('fonts/helvetica/HelveticaLTStdBold.ttf') format('truetype'),
+         url('fonts/helvetica/HelveticaLTStdBold.svg#HelveticaLTStdBold') format('svg');
+}
+
+
+@font-face {
+	font-family:'Maria Pro';
 	src:url("fonts/mariapro/maria.eot");
 	src:url("fonts/mariapro/maria.eot?#iefix") format('embedded-opentype'),
 	    url("fonts/mariapro/maria.woff") format('woff'),
@@ -89,17 +133,18 @@
 *[data-font='mariapro'] {
 	font-family: 'Maria Pro', sans-serif;	
 }
+
 @font-face {
-	font-family:'Matrix Script';
-	src:url("fonts/matrixscript/matrixscript.eot");
-	src:url("fonts/matrixscript/matrixscript.eot?#iefix") format('embedded-opentype'),
-	    url("fonts/matrixscript/matrixscript.woff") format('woff'),
-	    url("fonts/matrixscript/matrixscript.ttf") format('truetype'),
-	    url("fonts/matrixscript/matrixscript.svg#Maria Pro") format('svg');
+	font-family:'Perpetua';
+	src:url("fonts/mariapro/perpetua.eot");
+	src:url("fonts/mariapro/perpetua.eot?#iefix") format('embedded-opentype'),
+	    url("fonts/mariapro/perpetua.woff") format('woff'),
+	    url("fonts/mariapro/perpetua.ttf") format('truetype'),
+	    url("fonts/mariapro/perpetua.svg#Maria Pro") format('svg');
 	font-weight:'normal';
 	font-style:normal;
 }
-*[data-font='matrixscript'] {
-	font-family: 'Matrix Script', sans-serif;	
+*[data-font='perpetua'] {
+	font-family: 'Perpetua', sans-serif;	
 }
 

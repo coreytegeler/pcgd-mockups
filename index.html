@@ -15,7 +15,10 @@
 	<div id="front">
 		<div id="manifesto">
 			<div class="text">
-				<span class="title">The Purchase College Graphic Design Department</span> <span class="copy">offers a distinctive community in the art and practice of print and digitally based graphic design and experimental publishing. The program teaches students to solve visual communication problems with words, symbols, and image blocks through commercial, political, educational, literary, subversive, personal, and experimental applications. Our faculty members are practicing professional artists with significant exhibition records and prestigious awards. The department's alumni pursue careers in galleries and museums, national publications, art direction, education, and graduate study and research, and as independent, exhibiting studio artists. Blah blah blah, apply now!</span>
+				<span class="title">
+					<span class="word">The</span> <span class="word">Purchase</span> <span class="word">College</span><br/><span class="word">Graphic</span> <span class="word">Design</span> <span class="word">Dept.</span>
+				</span>
+				<span class="copy">We offer a distinctive community in the art and practice of print and digitally based graphic design and experimental publishing. The program teaches students to solve visual communication problems with words, symbols, and image blocks through commercial, political, educational, literary, subversive, personal, and experimental applications. Our faculty members are practicing professional artists with significant exhibition records and prestigious awards. The department's alumni pursue careers in galleries and museums, national publications, art direction, education, and graduate study and research, and as independent, exhibiting studio artists. Blah blah blah, apply now!</span>
 			</div>
 		</div>
 	</div>
@@ -29,29 +32,6 @@
 			</div>
 		</header>
 		<main>
-			<section id="typography">
-				<h2>Typography</h2>
-				<!-- <div class="help">
-					Click the word you would like to change to select. Hold shift to select multiple.
-				</div> -->
-				<select id="fontSelect">
-				 	<option value="basenine">Base Nine</option>
-					<option value="baskerville">Baskerville</option>
-					<option value="clarendon">Clarendon</option>
-					<option value="didot">Didot</option>
-					<option value="futura">Futura</option>
-					<option value="gillsans">Gill Sans</option>
-					<option selected="selected" value="maria">Maria Pro</option>
-					<option value="matrixscript">Matrix Script</option>
-				</select>
-				<div id="styling">
-					<h3 data-style="italic">Italicize</h3>
-					<h3 data-style="underline">Underline</h3>
-					<h3 data-style="strike">Strikethrough</h3>
-				</div>
-			</section>
-
-			
 			<section id="background">
 				<h2>Background</h2>
 				<div class="square" data-color="blue"></div>
@@ -74,6 +54,29 @@
 					<option value="yellow">Yellow</option>
 				</select> -->
 			</section>
+
+			<section id="typography">
+				<h2>Typography</h2>
+				<!-- <div class="help">
+					Click the word you would like to change to select. Hold shift to select multiple.
+				</div> -->
+				<!-- <div id="unselect">Unselect</div> -->
+				<select id="fontSelect">
+					<option value="baskerville">Baskerville</option>
+					<option value="clarendon">Clarendon</option>
+					<option value="didot">Didot</option>
+					<option value="futura">Futura</option>
+					<option value="gillsans">Gill Sans</option>
+					<option value="helvetica">Helvetica</option>
+					<option selected="selected" value="maria">Maria Pro</option>
+				</select>
+				<div id="styling">
+					<h3 data-style="italic">Italicize</h3>
+					<h3 data-style="underline">Underline</h3>
+					<h3 data-style="strike">Strikethrough</h3>
+				</div>
+			</section>
+			
 		</main>
 	</div>
 
@@ -198,8 +201,5 @@
 	</section>
 
 	<div id="imageViewer"></div>
-
-
-	<div class="zoomOut">✖</div>
 </body>
 </html>
