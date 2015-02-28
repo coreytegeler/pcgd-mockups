@@ -87,14 +87,9 @@ body {
 }
 .word.highlighted {
 	background: rgba(254,234,94,1);
-	/*background: -webkit-linear-gradient(left, rgba(254,234,94,1), rgba(255,20,20,2));*/
-}
-.copy .word {
-	text-shadow: 0 0 5px rgba(255,255,255,.5);
 }
 .nav-link {
 	cursor: pointer;
-	/*text-decoration: underline;*/
 	color: black;
 }
 #manifesto .nav-link {
@@ -102,15 +97,17 @@ body {
 	font-family: 'Perpetua';
 	letter-spacing: 5px;
 	border-bottom: 2px solid black;
+	cursor: zoom-in;
 }
 #manifesto .nav-link.selected {
 	color: black;
 	-webkit-transition: all 300ms ease;
 	-moz-transition: all 300ms ease;
 	transition: all 300ms ease;
+	cursor: zoom-out;
 }
 .zoom #manifesto .nav-link.selected:hover {
-	/*text-decoration: line-through !important;*/
+
 }
 .zoom #manifesto .nav-link:not(.selected) {
 	opacity: 0.08;
@@ -127,28 +124,6 @@ body {
 	overflow: hidden;
 	background: #ecf4ec;
 	/*opacity: .4;*/
-	transition: all 100ms ease !important;
-	-moz-transition: all 100ms ease !important;
-	-webkit-transition: all 100ms ease !important;
-}
-.tool#editor {
-	right: 50px;
-	top: 50px;
-} 
-.tool#navigator {
-	right: 50px;
-	bottom: 50px;
-	transform: translateY(5000px);
-	-moz-transform: -moz-translateY(5000px);
-	-webkit-transform: -webkit-translateY(5000px);
-	transition: transform 800ms ease !important;
-	-moz-transition: -moz-transform 800ms ease !important;
-	-webkit-transition: -webkit-transform 800ms ease !important;
-} 
-.zoom .tool#navigator {
-	transform: translateY(0);
-	-moz-transform: -moz-translateY(0);
-	-webkit-transform: -webkit-translateY(0);
 }
 .locked .tool {
 	right:0 !important;
@@ -158,9 +133,9 @@ body {
 	border-radius: 0 !important;
 }
 .locked .tool:not(.dragging) {
-	transition: all 100ms ease !important;
-	-moz-transition: all 100ms ease !important;
-	-webkit-transition: all 100ms ease !important;
+	transition: all 500ms ease !important;
+	-moz-transition: all 500ms ease !important;
+	-webkit-transition: all 500ms ease !important;
 }
 .tool.closed {
 	height: 40px !important;
@@ -211,7 +186,6 @@ body:not(.locked) .tool.dragging, body:not(.locked) .tool:hover {
 	-moz-transform: rotateZ(45deg);
 	-webkit-transform: rotateZ(45deg);
 }
-
 .tool section {
 	display: table;
 }
@@ -245,6 +219,27 @@ body:not(.locked) .tool.dragging, body:not(.locked) .tool:hover {
 	outline: none;
 	margin: 10px 0;
 }
+.tool#editor {
+	right: 50px;
+	top: 50px;
+} 
+.tool#navigator {
+	right: 50px;
+	bottom: 50px;
+	transform: translateY(5000px);
+	-moz-transform: -moz-translateY(5000px);
+	-webkit-transform: -webkit-translateY(5000px);
+}
+.tool#navigator .nav-link.selected {
+	text-decoration: underline;
+}
+.zoom .tool#navigator, .switching .tool#navigator {
+	transform: translateY(0);
+	-moz-transform: -moz-translateY(0);
+	-webkit-transform: -webkit-translateY(0);
+}
+
+
 *[data-style="italic"] {
 	font-style: italic !important;
 }
@@ -312,7 +307,7 @@ body:not(.locked) .tool.dragging, body:not(.locked) .tool:hover {
 	line-height: 14px;
 	cursor: pointer;
 }
-.people {
+.page {
 	position: fixed;
 	width: 100%;
 	height: 100%;
@@ -326,28 +321,33 @@ body:not(.locked) .tool.dragging, body:not(.locked) .tool:hover {
 	line-height: 50px;
 	overflow-y: auto;
 }
-.people.selected {
+.page.selected {
 	-webkit-transform: translateY(0);
 	-moz-transform: translateY(0);
 	transform: translateY(0);
 	/*opacity: 1;
 	z-index: 2;*/
 }
-.people .blocks .block.text {
+.page .blocks .block.text {
 	font-size: 24px;
 	line-height: 35px;
+	font-weight: 700;
 	width: 420px !important;
 }
-.block.text .nav-link[data-style="strike"]:hover {
+.block.text .tag {
+	text-decoration: underline;
+	cursor: pointer;
+}
+.block.text .tag[data-style="strike"]:hover {
 	text-decoration: none !important;
 }
 
-.people .blocks {
+.page .blocks {
 	padding: 0 30px;
 	display: table;
 	margin: auto;
 }
-.people .blocks .block {
+.page .blocks .block {
 	width: 200px;
 	margin-bottom: 20px; 
 	display: block;
@@ -357,19 +357,23 @@ body:not(.locked) .tool.dragging, body:not(.locked) .tool:hover {
 	-moz-transition: opacity 200ms ease;
 	transition: opacity 200ms ease;
 }
-.people .blocks .block.show {
+.page .blocks .block.show {
 	opacity: 1;
 }
-.people .blocks .block.hide {
+.page .blocks .block.hide {
 	display: none;
 }
-.people .blocks .block.feature {
+.page .blocks .block.large {
 	width: 420px;
 }
-.people .blocks .image img {
+.page .blocks .image img {
 	width: 100%;
+	cursor: zoom-in;
 }
-.people .block.hide {
+.page .blocks .image.large img {
+	cursor: zoom-out;
+}
+.page .block.hide {
 	display: none;
 }
 #imageViewer {
