@@ -18,80 +18,82 @@
 				<span class="title">
 					<span class="word">The</span> <span class="word">Purchase</span> <span class="word">College</span><br/><span class="word">Graphic</span> <span class="word">Design</span> <span class="word">Dept.</span>
 				</span>
+				<!-- <span id="cursor">|</span> -->
 				<span class="copy">We offer a distinctive community in the art and practice of print and digitally based graphic design and experimental publishing. Our prestigious faculty are all practicing professional artists teaches students to solve visual communication problems with words, symbols, and images through commercial, political, educational, literary, subversive, personal, and experimental applications. The department's alumni pursue careers in galleries and museums, national publications, art direction, education, and graduate study and research, and as independent, exhibiting studio artists. Blah blah blah, apply now!</span>
 			</div>
 		</div>
 	</div>
 
-	<div class="tool" id="editor">
-		<header>
-			<h1>Editor</h1>
-			<div class="buttons">
-				<div class="button close">&#x261D;</div>
-				<div class="button lock">&#x261E;</div>
-			</div>
-		</header>
-		<main>
-			<section id="background">
-				<h2>Background</h2>
-				<div class="square" data-color="blue"></div>
-				<div class="square" data-color="green"></div>
-				<div class="square" data-color="red"></div>
-				<div class="square" data-color="white"></div>
-				<div class="square" data-color="yellow"></div>
-				<div class="square" data-pattern="grid"></div>
-				<div class="square" data-pattern="dot"></div>
-				<div class="square" data-pattern="pink-diagonal"></div>
-				<div class="square" data-pattern="pink-x"></div>
-				<div class="square" data-pattern="horz-cyan"></div>
-				<div class="square" data-pattern="scattered-sticks"></div>
-			</section>
-
-			<section id="typography">
-				<h2>Typography</h2>
-				<!-- <div class="help">
-					Click the word you would like to change to select. Hold shift to select multiple.
-				</div> -->
-				<!-- <div id="unselect">Unselect</div> -->
-				<select id="fontSelect">
-					<option value="baskerville">Baskerville</option>
-					<option value="clarendon">Clarendon</option>
-					<option value="didot">Didot</option>
-					<option value="futura">Futura</option>
-					<option value="gillsans">Gill Sans</option>
-					<option selected="selected" value="helvetica">Helvetica</option>
-				</select>
-				<div id="styling">
-					<h3 data-style="italic">Italicize</h3>
-					<h3>Underlines</h3>
-					<div id="underlines">
-						<div class="square underline" data-underline="blue-squiggle"></div>
-					</div>
-					<h3 data-style="strike">Strikethrough</h3>
+	<div id="tools">
+		<div class="tool" id="editor">
+			<header>
+				<h1>Editor</h1>
+				<div class="buttons">
+					<div class="button close">&#x261D;</div>
+					<div class="button lock">&#x261E;</div>
 				</div>
-			</section>
-			
-		</main>
+			</header>
+			<main>
+				<section id="background">
+					<h2>Background</h2>
+					<div class="square" data-color="white"></div>
+					<div class="square" data-color="blue"></div>
+					<div class="square" data-color="green"></div>
+					<div class="square" data-color="red"></div>
+					<div class="square" data-color="yellow"></div>
+					<div class="square" data-pattern="grid"></div>
+					<div class="square" data-pattern="dot"></div>
+					<div class="square" data-pattern="pink-diagonal"></div>
+					<div class="square" data-pattern="pink-x"></div>
+					<div class="square" data-pattern="horz-cyan"></div>
+					<div class="square" data-pattern="scattered-sticks"></div>
+				</section>
+
+				<section id="typography">
+					<h2>Typography</h2>
+					<!-- <div class="help">
+						Click the word you would like to change to select. Hold shift to select multiple.
+					</div> -->
+					<!-- <div id="unselect">Unselect</div> -->
+					<select id="fontSelect">
+						<option value="baskerville">Baskerville</option>
+						<option value="clarendon">Clarendon</option>
+						<option value="didot">Didot</option>
+						<option value="futura">Futura</option>
+						<option value="gillsans">Gill Sans</option>
+						<option selected="selected" value="helvetica">Helvetica</option>
+					</select>
+					<div id="styling">
+						<!-- <h3 data-style="italic">Italicize</h3> -->
+						<h3>Underlines</h3>
+						<div id="underlines">
+							<div class="square underline" data-underline="blue-squiggle"></div>
+						</div>
+						<h3 data-style="strike">Strikethrough</h3>
+					</div>
+				</section>
+				
+			</main>
+		</div>
+
+
+		<div class="tool" id="navigator">
+			<header>
+				<h1>Navigator</h1>
+				<div class="buttons">
+					<div class="button close">&#x261D;</div>
+					<div class="button lock">&#x261E;</div>
+				</div>
+			</header>
+			<main>
+				<h2 class="nav-link" data-link="community">Community</h2>
+				<h2 class="nav-link" data-link="students">Students</h2>
+				<h2 class="nav-link" data-link="faculty">Faculty</h2>
+				<h2 class="nav-link" data-link="alumni">Alumni</h2>
+				<h2 class="nav-link" data-link="apply">Apply</h2>
+			</main>
+		</div>
 	</div>
-
-	<div class="tool" id="navigator">
-		<header>
-			<h1>Navigator</h1>
-			<div class="buttons">
-				<div class="button close">&#x261D;</div>
-				<div class="button lock">&#x261E;</div>
-			</div>
-		</header>
-		<main>
-			<h3 class="nav-link" data-link="community">Community</h3>
-			<h3 class="nav-link" data-link="students">Students</h3>
-			<h3 class="nav-link" data-link="faculty">Faculty</h3>
-			<h3 class="nav-link" data-link="alumni">Alumni</h3>
-			<h3 class="nav-link" data-link="apply">Apply</h3>
-		</main>
-	</div>
-
-
 	<section class="page" id="faculty">
 
 	</section>
@@ -104,7 +106,7 @@
 		<div class="blocks">
 			<div class="stamp"></div>
 			<div class="block text">
-				The graphic design area offers a distinctive program in the art and practice of print and digitally based graphic design and experimental publishing. The program approaches graphic design as a vital field of professional art practice that gives shape to culture through a variety of media and applications, including <span data-tag="poster" class="tag">posters</span>, <span data-tag="motion" class="tag">motion graphics</span>, <span data-tag="book" class="tag">books</span>, <span data-tag="web" class="tag">web</span>, <span data-tag="type" class="tag">typography</span>, <span data-tag="exhibition" class="tag">exhibition design</span> and <span data-tag="packaging" class="tag">packaging</span>.
+				The graphic design area offers a distinctive program in the art and practice of print and digitally based graphic design and experimental publishing. The program approaches graphic design as a vital field of professional art practice that gives shape to culture through a variety of media and applications, including <span data-tag="poster" class="tag">posters</span>, <span data-tag="motion" class="tag">motion</span>, <span data-tag="book" class="tag">books</span>, <span data-tag="web" class="tag">web</span>, <span data-tag="type" class="tag">typography</span>, <span data-tag="exhibition" class="tag">exhibition</span> and <span data-tag="packaging" class="tag">packaging</span>.
 			</div>
 			<div class="poster image block">
 				<img src="assets/img/posters/1.jpg"/>

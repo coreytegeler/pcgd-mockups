@@ -74,22 +74,46 @@ body {
 	letter-spacing: 2px;
 	font-weight: bolder;
 	display: block;
+	opacity: 0;
+	-webkit-transition: opacity 70ms ease-in; 
+   	-moz-transition: opacity 70ms ease-in; 
+    -o-transition: opacity 70ms ease-in; 
+    transition: opacity 70ms ease-in;
+}
+#manifesto .title.show {
+	opacity: 1;
 }
 .word {
-	-webkit-transition: all 100ms ease;
-	-moz-transition: all 100ms ease;
-	transition: all 100ms ease;
+	-webkit-transition: opacity 70ms ease-in; 
+   	-moz-transition: opacity 70ms ease-in; 
+    -o-transition: opacity 70ms ease-in; 
+    transition: opacity 70ms ease-in;
 	padding: 5px;
 }
-.word:hover {
+.copy .word.show {
+	opacity: 1;
+}
+body:not(.zoom) .word:hover {
 	cursor: pointer;
 }
 .word.highlighted {
 	background-color: rgba(254,234,94,1);
 }
+.copy .word {
+	opacity: 0
+}
 .nav-link {
-	cursor: pointer;
 	color: black;
+	opacity: 0;
+	
+	-webkit-transition: opacity 70ms ease-in; 
+   	-moz-transition: opacity 70ms ease-in; 
+    -o-transition: opacity 70ms ease-in; 
+    transition: opacity 70ms ease-in;
+}
+.nav-link.show {
+	opacity: 1;
+	cursor: pointer;
 }
 #manifesto .nav-link {
 	text-transform: uppercase;
@@ -105,31 +129,59 @@ body {
 	transition: all 300ms ease;
 	cursor: zoom-out;
 }
+#manifesto #cursor {
+	font-family: 'Baskerville';
+	font-size: 45px;
+	font-weight: 100;
+	width: 0;
+	display: none;
+	overflow: visible;
+    -webkit-animation: blink 800ms step-end infinite; /* Chrome, Safari, Opera */
+}
+@-webkit-keyframes blink {
+    0% {
+    	opacity: 0;
+    }
+    99
+    100% {
+    	background: 1;
+    }
+}
 .zoom #manifesto .nav-link.selected:hover {
 
 }
 .zoom #manifesto .nav-link:not(.selected) {
 	opacity: 0.08;
 }
-
+#tools {
+	z-index: 100;
+}
+.locked #tools {
+	position: fixed;
+	right:0;
+	top:0;
+	left:auto;
+	height: 100%;
+	width: 200px;
+	border-radius: 0;
+}
 .tool {
 	position: fixed;
 	width: 200px;
-	/*height: 100px;*/
-	/*box-shadow: 8px 8px 0px 0px rgba(0,0,0,.5);*/
-	border: 2px solid black;
-	/*border-radius: 6px;*/
-	z-index: 100;
 	overflow: hidden;
 	background: #ecf4ec;
-	/*opacity: .4;*/
+	opacity: 0;
+	display: table;
+	z-index: 100;
 }
-.locked .tool {
-	right:0 !important;
-	top:0 !important;
-	left:auto !important;
-	height: 100% !important;
-	border-radius: 0 !important;
+.tool.show {
+	opacity: 1;
+}
+.locked #tools .tool {
+	top: 0 !important;
+	right: 0 !important;
+	bottom: auto !important;
+	left: auto !important;
 }
 .locked .tool:not(.dragging) {
 	transition: all 500ms ease !important;
@@ -197,7 +249,7 @@ body:not(.locked) .tool.dragging, body:not(.locked) .tool:hover {
 	font-size: 18px;
 	line-height: 18px;
 	font-weight: 700 !important;
-	margin: 5px 0 5px 0;
+	margin: 0;
 	padding: 0;
 	font-weight: normal;
 	cursor: pointer;
@@ -240,6 +292,9 @@ body:not(.locked) .tool.dragging, body:not(.locked) .tool:hover {
 } 
 *[data-style="strike"] {
 	text-decoration: line-through !important;
+}
+*[data-style="outline"] {
+   text-shadow:	-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 
@@ -344,7 +399,7 @@ body:not(.locked) .tool.dragging, body:not(.locked) .tool:hover {
 	font-weight: 700;
 	width: 420px !important;
 	text-indent: 50px;
-	text-align: justify;
+	/*text-align: justify;*/
 }
 .block.text .tag {
 	text-decoration: underline;
@@ -355,7 +410,7 @@ body:not(.locked) .tool.dragging, body:not(.locked) .tool:hover {
 }
 
 .page .blocks {
-	padding: 0 30px;
+	padding: 100px 30px;
 	display: table;
 	margin: auto;
 }
@@ -365,9 +420,10 @@ body:not(.locked) .tool.dragging, body:not(.locked) .tool:hover {
 	display: block;
 	float: left;
 	opacity: 0;
-	-webkit-transition: opacity 200ms ease;
-	-moz-transition: opacity 200ms ease;
-	transition: opacity 200ms ease;
+	-webkit-transition: opacity 70ms ease-in; 
+   	-moz-transition: opacity 70ms ease-in; 
+    -o-transition: opacity 70ms ease-in; 
+    transition: opacity 70ms ease-in;
 }
 .page .blocks .block.show {
 	opacity: 1;

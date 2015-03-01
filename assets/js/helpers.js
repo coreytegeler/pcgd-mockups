@@ -32,3 +32,7 @@ function winW() {
 function winH() {
 	return window.innerHeight
 }
+
+function rand(x) {
+  return Math.floor((Math.random() * x)+1)
+}
