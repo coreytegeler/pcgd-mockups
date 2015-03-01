@@ -38,7 +38,7 @@ $(function() {
 		}, speed);
 		$('body').addClass('zoom');
 		$('.nav-link[data-link="'+pageName+'"]').addClass('selected');
-		var marginTop = ($header.height() * scale) + 40;
+		var marginTop = $header.height()*scale + 80;
 		$('#manifesto .word.highlighted').removeClass('highlighted');
 		$selectedSection = $('section#'+pageName);
 		$selectedSection.css({marginTop: marginTop}).addClass('selected');
@@ -136,13 +136,6 @@ $(function() {
 			$('.word.highlighted').removeClass('highlighted');
 		});
 
-		// $('body').click(function(e) {
-		// 	console.log(!$(e.target).hasClass('word'));
-		// 	if(!$(e.target).hasClass('word')) {
-		// 		$('.word.selected').removeClass('selected');
-		// 	}
-		// });
-
 		$('#fontSelect').change(function(e) {
 			var font = e.target.value;
 			$('.word.highlighted').attr('data-font', font);
@@ -162,16 +155,23 @@ $(function() {
 	}
 
 
-	$('.tool#editor #close').click(function() {
-		$('.tool#editor').toggleClass('closed','');
+	$('.tool .close').click(function() {
+		$tool = $(this).parent().parent().parent();
+		console.log($tool);
+		$tool.toggleClass('closed');
+		if($tool.is('.closed')) {
+			$(this).html('&#x261F;');
+		} else {
+			$(this).html('&#x261D;');
+		}
 	});
 
-	$('.tool#editor #lock').click(function() {
+	$('.tool .lock').click(function() {
 		$('body').toggleClass('locked','');
 		if($('body').is('.locked')) {
-			$(this).html('&#9754;');
+			$(this).html('&#x261C;');
 		} else {
-			$(this).html('&#9755;');
+			$(this).html('&#x261E;');
 		}
 		
 	});
@@ -185,24 +185,32 @@ $(function() {
 		}
 	});
 
-	$('.tool#editor #background .square').click(function() {
+	$('.tool#editor .square').click(function() {
+		$(this).toggleClass('selected');
+
+		$highlighted = $('.word.highlighted');
+
 		if($(this).attr('data-color')) {
 			var color = $(this).attr('data-color');
-			if($('body').attr('data-color') == color) {
-				$('body').attr('data-color', '');	
-			} else {
-				$('body').attr('data-color', color);	
-			}
-		}
-		if($(this).attr('data-pattern')) {
+			$('body').attr('data-color', color);	
+		} else if($(this).attr('data-pattern')) {
 			var pattern = $(this).attr('data-pattern');
 			if($('body').attr('data-pattern') == pattern) {
 				$('body').attr('data-pattern', '');	
 			} else {
 				$('body').attr('data-pattern', pattern);	
 			}
+		} else if ($(this).attr('data-underline')) {
+			var underline = $(this).attr('data-underline');
+
+			if($highlighted.attr('data-underline') == underline) {
+				$highlighted.attr('data-underline', '');	
+			} else {
+				$highlighted.attr('data-underline', underline);
+			}
 		}
 	});
+
 
 
 

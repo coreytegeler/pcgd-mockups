@@ -51,7 +51,6 @@ body {
 	text-indent: 140px;
 	font-weight: 700;
 	text-align: justify;
-    text-justify: auto;
     display: block;
     margin: 30px 0 0 30px;
     padding: 30px;
@@ -86,7 +85,7 @@ body {
 	cursor: pointer;
 }
 .word.highlighted {
-	background: rgba(254,234,94,1);
+	background-color: rgba(254,234,94,1);
 }
 .nav-link {
 	cursor: pointer;
@@ -138,7 +137,7 @@ body {
 	-webkit-transition: all 500ms ease !important;
 }
 .tool.closed {
-	height: 40px !important;
+	height: 60px !important;
 }
 body:not(.locked) .tool.dragging, body:not(.locked) .tool:hover {
 	cursor: move;
@@ -151,40 +150,33 @@ body:not(.locked) .tool.dragging, body:not(.locked) .tool:hover {
 	width: calc(100% - 20px);
 	width: -moz-calc(100% - 20px);
 	width: -webkit-calc(100% - 20px);
+	height: 30px;
 }
 .tool header h1 {
 	font-size: 25px;
 	line-height: 25px;
 	margin: 0;
 	padding: 0;
-	float:left;
+	display: table-cell;
+	vertical-align: middle;
 }
 .tool main {
 	padding: 10px;
 	display: table;
 	width: 180px;
 }
-.tool #buttons {
+.tool .buttons {
 	display: table;
 	float: right;
+	height: 30px;
 }
-.tool #buttons .button {
-	float:left;
-	font-size: 20px;
-	line-height: 20px;
+.tool .buttons .button {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 30px;
+	line-height: auto;
 	cursor: pointer;
 	margin: 0 5px;
-}
-.tool #close {
-	transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-webkit-transition: all 200ms ease;
-}
-.tool.closed #close {
-
-	transform: rotateZ(45deg);
-	-moz-transform: rotateZ(45deg);
-	-webkit-transform: rotateZ(45deg);
 }
 .tool section {
 	display: table;
@@ -248,13 +240,31 @@ body:not(.locked) .tool.dragging, body:not(.locked) .tool:hover {
 } 
 *[data-style="strike"] {
 	text-decoration: line-through !important;
-} 
+}
+
+
+#underlines .square {
+	background-position: center !important; 
+}
+*[data-underline="blue-squiggle"] {
+	text-decoration: none !important;
+	background-image: url(../img/underlines/blue-squiggle.png);
+	background-repeat: repeat-x;
+	background-position: bottom;
+	background-size: auto 9px;
+}
+
+
+
 .square {
 	width: 35px;
 	height: 35px;
 	margin:5px;
 	float: left;
 	cursor: pointer;
+}
+.square.selected {
+	box-shadow: 0 0 1px rgba(0,0,0,.4);
 }
 *[data-color='blue'] {
 	background-color: #008ecd;
@@ -329,10 +339,12 @@ body:not(.locked) .tool.dragging, body:not(.locked) .tool:hover {
 	z-index: 2;*/
 }
 .page .blocks .block.text {
-	font-size: 24px;
+	font-size: 20px;
 	line-height: 35px;
 	font-weight: 700;
 	width: 420px !important;
+	text-indent: 50px;
+	text-align: justify;
 }
 .block.text .tag {
 	text-decoration: underline;
