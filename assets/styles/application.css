@@ -163,7 +163,6 @@ body:not(.zoom) .word:hover {
 	left:auto;
 	height: 100%;
 	width: 200px;
-	border-radius: 0;
 }
 .tool {
 	position: fixed;
@@ -171,22 +170,26 @@ body:not(.zoom) .word:hover {
 	overflow: hidden;
 	background: #ecf4ec;
 	opacity: 0;
-	display: table;
 	z-index: 100;
+	border-radius: 8px;
+	/*box-shadow: 0 0 5px 5px rgba(0,0,0,.3);*/
 }
 .tool.show {
 	opacity: 1;
 }
 .locked #tools .tool {
-	top: 0 !important;
 	right: 0 !important;
 	bottom: auto !important;
 	left: auto !important;
+	border-radius: 0;
+}
+.locked #tool .tool#navigator {
+	top: 0 !important;
 }
 .locked .tool:not(.dragging) {
-	transition: all 500ms ease !important;
+	/*transition: all 500ms ease !important;
 	-moz-transition: all 500ms ease !important;
-	-webkit-transition: all 500ms ease !important;
+	-webkit-transition: all 500ms ease !important;*/
 }
 .tool.closed {
 	height: 60px !important;
@@ -215,7 +218,9 @@ body:not(.locked) .tool.dragging, body:not(.locked) .tool:hover {
 .tool main {
 	padding: 10px;
 	display: table;
-	width: 180px;
+	width: 176px;
+	height: 100%;
+	border: 2px solid rgba(0,0,0,.04);
 }
 .tool .buttons {
 	display: table;
@@ -420,10 +425,10 @@ body:not(.locked) .tool.dragging, body:not(.locked) .tool:hover {
 	display: block;
 	float: left;
 	opacity: 0;
-	-webkit-transition: opacity 70ms ease-in; 
-   	-moz-transition: opacity 70ms ease-in; 
-    -o-transition: opacity 70ms ease-in; 
-    transition: opacity 70ms ease-in;
+	-webkit-transition: opacity 70ms ease-in, top 0, left 0; 
+   	-moz-transition: opacity 70ms ease-in, top 0, left 0; 
+    -o-transition: opacity 70ms ease-in, top 0, left 0; 
+    transition: opacity 70ms ease-in, top 0, left 0;
 }
 .page .blocks .block.show {
 	opacity: 1;
